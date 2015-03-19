@@ -9,6 +9,11 @@
 	</div>
 	<div ng-show="artistsPhoto" class="artist-socialmedia-container">
 		<img ng-src="{{artistsPhoto}}" class="wow fadeIn"></div>
+  <div class="artist-general-info">
+        <p>Country: {{artistData.country_of_origin}}</p>
+        <p>Genre: {{artistData.main_genre}}</p>
+        <p>Decade: {{artistData.decade}}</p>
+  </div>
 </div>
 <div class="half-page  setstory-object">
 	<div>
