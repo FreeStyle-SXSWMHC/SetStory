@@ -71,9 +71,9 @@
 	    			</div>	
     			   </div>
     			
-
+    			   <h3 ng-show="concert.tracks.length > 0"> SetList</h3>
     				<div class="tracklist-container">
-    					<h3 ng-show="concert.tracks.length > 0"> SetList</h3>
+    					
     					<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
 
 	    				<h2>{{track.name}} 
