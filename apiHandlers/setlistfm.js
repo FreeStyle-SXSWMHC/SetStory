@@ -9,8 +9,13 @@ var setlistFM = {
                 query:{'artistName' : artist}
             })
             .on('complete', function(data){
-            console.log(data.setlists.setlist[0].venue[0].city[0].country[0].$.name);
-            // cb(cleanGenres);
+            console.log(data.setlists.setlist[2].sets[0].set[0].song[17].cover.name);
+            //A gig detail
+            //data.setlists.setlist
+            
+            //A gig song 
+
+            //data.setlists.setlist[j].sets[0].set[0].song
 
             // return 0;
         }).on('error', function(data){
