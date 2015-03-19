@@ -34,36 +34,32 @@
 	<div class="artist-container">
 		<div class="buffer-big"></div>
 		<div class="artist-title-container">
-			<div class="artist-title">Bassnectar</div>
+			<div class="artist-title">Skrillex</div>
 			<div class="buffer"></div>
 		</div>
 		<div class="artist-socialmedia-container"></div>
 		<div class="buffer"></div>
 	</div>
-	<div class="setstory-object"></div>
-</div>	
+	<div class="setstory-object">
+		<div ng-app='myApp' ng-controller='DemoController'>
+	  <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+	    <div ng-repeat='concert in sets'> 
+	    	<h1>{{concert.location}}</h1>
+	    <div ng-repeat='track in concert.tracks'>
+	    	<h2>{{track.name}} by <small>{{track.artist}}</small></h2>
 
-	<div ng-app='myApp' ng-controller='ArtistController'>
-	  <div 
-	  	infinite-scroll='concerts.nextPage()' 
-	  	infinite-scroll-disabled='concerts.busy' 
-	  	infinite-scroll-distance='1'>
-	    <div ng-repeat='c in concerts.items'>
-	    	<!-- TODO: WHHHYYY???? -->
-	    	<div ng-repeat='a in c'>
-	    		<div ng-repeat='t in a.tracks'>
-			      <span class='title'>
-			        <h1> {{t.name}}</h1>
-			      </span>
-			      <small>by {{t.artist}}
-			      </small>
-			      <div style='clear: both;'></div>
-			     </div>
-		    </div>
-		</div>
-	    <div ng-show='concerts.busy'>Loading data...</div>
+	    </div>
+
+	    
 	  </div>
 	</div>
+	
+
+
+		</div>
+</div>	
+
+	
     <script src="/scripts/services.js"></script>
     <script src="/scripts/app.js"></script>
 
