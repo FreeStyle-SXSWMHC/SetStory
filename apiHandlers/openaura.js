@@ -2,7 +2,6 @@ var rest = require('restler');
 var openaura = {};
 var api_key = 'sxsw2015';
 
-
 openaura.getArtistImage = function(artist, cb){
     // Use decibel to get all genres for a given artist
     rest.get('http://api.openaura.com/v1/search/artists', {
@@ -16,6 +15,14 @@ openaura.getArtistImage = function(artist, cb){
         })
     })
 }
+
+/* Particle work
+ rest.get('http://api.openaura.com//v1/particles/particle/' + oa_artist_id, {
+ query: {'id_type' : 'oa:source_id', 'api_key' : 'zlA809tV1FCxCb55n5ei0mSmbtHgvpJe' }}).on('complete', function(data){
+ console.log(data);
+ })
+
+ */
 
 
 module.exports = openaura;

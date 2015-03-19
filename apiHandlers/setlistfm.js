@@ -3,6 +3,7 @@ var appId = 'setlistfm';
 var appKey = '463c64bb-c052-49bd-9838-8c251c427668';
 
 var setlistFM = {
+    // Make a clean output of the mess that is the setlistfm api
     getArtistGigs: function(artist, cb){
         //Use SetList to get all artists gigs
         rest.get('http://api.setlist.fm/rest/0.1/search/setlists', {
@@ -15,11 +16,14 @@ var setlistFM = {
                     var gig = {};
                     var tracks = [];
                     var current = data.setlists.setlist[i];
+                    gig.location = {};
+                    gig.location.city = current.venue[0].city[0].$.name
+                    gig.location.state = current.venue[0].city[0].$.state
+
                     for (var key in current.$){
                         gig[key] = current.$[key]
                     }
-                    //console.log(gig)
-                    // console.log(current);
+
                     if (current.sets[0]) {
                         for(var j = 0 ; j < current.sets[0].set[0].song.length ; j++){
                             var track = {};
@@ -32,9 +36,7 @@ var setlistFM = {
                             track.name = currentSong.$.name
                             tracks.push(track);
                         }
-
                     }
-
                     //console.log(data.setlists.setlist[i]);
                     gig.tracks = tracks;
                     output.push(gig);
@@ -51,3 +53,5 @@ var setlistFM = {
 
 
 module.exports = setlistFM;
+
+setlistFM.getArtistGigs('Skrillex', function(data){});
