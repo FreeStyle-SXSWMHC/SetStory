@@ -9,15 +9,37 @@ var setlistFM = {
                 query:{'artistName' : artist}
             })
             .on('complete', function(data){
-            console.log(data.setlists.setlist[2].sets[0].set[0].song[17].cover.name);
-            //A gig detail
-            //data.setlists.setlist
-            
-            //A gig song 
+                // Build obj
+                var output = [];
+                for (var i = 0 ; i < data.setlists.setlist.length ; i++){
+                    var gig = {};
+                    var tracks = [];
+                    var current = data.setlists.setlist[i];
+                    for (var key in current.$){
+                        gig[key] = current.$[key]
+                    }
+                    //console.log(gig)
+                    // console.log(current);
+                    if (current.sets[0]) {
+                        for(var j = 0 ; j < current.sets[0].set[0].song.length ; j++){
+                            var track = {};
+                            var currentSong = current.sets[0].set[0].song[j];
+                            if (currentSong.cover) {
+                                track.originalArtist = currentSong.cover[0].$.name
+                            }
+                            // Not a cover -> Original
+                            //console.log(currentSong.$.name);
+                            track.name = currentSong.$.name
+                            tracks.push(track);
+                        }
 
-            //data.setlists.setlist[j].sets[0].set[0].song
+                    }
 
-            // return 0;
+                    //console.log(data.setlists.setlist[i]);
+                    gig.tracks = tracks;
+                    output.push(gig);
+                }
+                cb(output);
         }).on('error', function(data){
             console.log(data);
             cb(data);
@@ -29,5 +51,3 @@ var setlistFM = {
 
 
 module.exports = setlistFM;
-
-setlistFM.getArtistGigs('Skrillex');
