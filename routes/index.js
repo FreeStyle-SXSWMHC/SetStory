@@ -17,7 +17,7 @@ router.get('/api/search/:name', function(req, res, next){
     var artists = [];
     artists.push('Skrillex');
     artists.push('Diplo');
-    artists.push('Kayne West');
+    artists.push('Kanye West');
     artists.push('Jay Z');
     artists.push('12th Planet');
     artists.push('Calvin Harris');
