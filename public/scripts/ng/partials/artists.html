@@ -53,19 +53,7 @@
 	    			</div>
 	    			
     			</div>
-    			<div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
-    				<div ng-repeat='m in media' >
-    					<div ng-show="showImage(m)">
-	    					<img ng-src="{{m.url}}">
-	    				</div>
-	    				<!-- <div ng-show="showVideo(m)">
-	    					<video controls ng-src="{{showVideoUrl(m.url)}}">
-	    				</div>
-	    				<div ng-show="showEmbed(m)">
-	    					<iframe ng-src="{{showVideoUrl(m.url)}}">
-	    				</div> -->
-	    			</div>	
-    			</div>
+    			
     			<div class="genres-viz">
     				<d3circles dataset="concert.meta.genres"> </d3circles>
 
@@ -77,6 +65,21 @@
 	    				</h2>
     			    	</div>
     			    </div>
+
+    			    <div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
+    				<div ng-repeat='m in media' >
+    					<div ng-show="showImage(m)" >
+	    					<img ng-src="{{m.url}}" style = "width:25vw;height:25vh">
+	    				</div>
+	    				<!-- <div ng-show="showVideo(m)">
+	    					<video controls ng-src="{{showVideoUrl(m.url)}}">
+	    				</div>
+	    				<div ng-show="showEmbed(m)">
+	    					<iframe ng-src="{{showVideoUrl(m.url)}}">
+	    				</div> -->
+	    			</div>	
+    			   </div>
+
     			</div>
 
 

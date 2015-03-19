@@ -12,7 +12,7 @@ decibel.getArtistGenres = function(artist, cb){
                     'DecibelAppKey' : decibel.appKey}})
         .on('complete', function(data){
         // TODO: Do we want more than just the first result?
-        console.log('results decibel', data.length);
+        //console.log('results decibel', data.length);
         var genres = data.Results[0].Genres;
         // TODO: Map
         var cleanGenres = [];
@@ -37,7 +37,7 @@ decibel.getSongInfo = function(title,artist,cb) {
         query: {'name': artist},
         headers: {'DecibelAppID': decibel.appId, 'DecibelAppKey': decibel.appKey}
     }).on('complete', function (data) {
-        console.log(data)
+        //console.log(data)
         cb(data);
     })
 };

@@ -9,8 +9,6 @@ var musicgraph = require('../apiHandlers/musicgraph');
 var setmine = require('../apiHandlers/setmine')
 
 setmine.init(function() {
-    console.log("Artists retrieved successfully.")
-    console.log("TEST INIT")
 })
 
 /* GET home page. */
@@ -38,15 +36,13 @@ router.get('/api/search/:name', function(req, res, next) {
 });
 router.get('/api/artist/:artistName/:page/:count', function(req, res, next){
     // TODO: Make dynamic
-    console.log(req.params.page);
-    console.log(req.params.artistName);
     if (parseInt(req.params.page) > 5){
         res.json({sets:[]});
     }
     else{
         res.json(skrillex);
     }
-    
+
 });
 
 router.get('/api/artist/:artistName', function(req,res,next){
