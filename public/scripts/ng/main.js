@@ -91,7 +91,7 @@ myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routePara
 	var url = "/api/story/"+ $scope.choice; 
 	
 	$http.get(url).success(function(data) {
-		// $scope.sets= data;
+		$scope.sets= data;
 	});
    	
 });
