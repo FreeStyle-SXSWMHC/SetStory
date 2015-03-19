@@ -35,9 +35,6 @@ angular.module('myApp')
             .innerRadius(0)
             .outerRadius(r);
 
-    var arcOver = d3.svg.arc()
-            .innerRadius(0)
-                .outerRadius(150 + 10);
 
     var pie = d3.layout.pie()           //this will create arc data for us given a list of values
         .value(function(d) { return d.count; });    //we must tell it out to access the value of each element in our data array
@@ -57,17 +54,17 @@ angular.module('myApp')
         arcs.on("mouseover", function(d) {
                   
                   $referenceLabel.html(d.data.count + '-' + d.data.name );
-                  d3.select(this).transition()
-                     .duration(1000)
-                     .attr("d", arcOver);
+                 //  d3.select(this).transition()
+                 //     .duration(1000)
+                 //     .attr("d", arcOver);
                  })
         .on("mouseout", function(d) {
                   $referenceLabel.html('')
-                  d3.select(this).transition()
-                     .duration(1000)
-                     .attr("d", arc);
+                  // d3.select(this).transition()
+                  //    .duration(1000)
+                  //    .attr("d", arc);
                  });
-
+        $(element.context).find('svg')[0].remove()
         arcs.append("svg:text")                                     //add a label to each slice
                 .attr("transform", function(d) {                    //set the label's origin to the center of the arc
                 //we have to make sure to set these before calling arc.centroid
