@@ -4,19 +4,22 @@ var api_key = 'sxsw2015';
 
 var artists = []
 
+setmine.artists = []
+
 setmine.init = function(callback) {
 
     rest.get('http://setmine.com/api/t/artists', {
         query : {}}).on('complete', function(data) {
-	        console.log(data)
-	        setmine.artists = data.artists
+        	console.log(typeof data)
+        	console.log(typeof data.artists)
+        	for(var i in data.artists) {
+        		setmine.artists.push(data.artists[i])
+        	}
 	        if(callback) {
 	        	callback()
 	        }
 	    })
 
 }
-
-setmine.artists = artists
 
 module.exports = setmine;

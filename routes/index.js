@@ -6,34 +6,35 @@ var openaura = require('../apiHandlers/openaura');
 var setlistFM = require('../apiHandlers/setlistfm');
 var unified = require('../apiHandlers/unified');
 var musicgraph = require('../apiHandlers/musicgraph');
+var setmine = require('../apiHandlers/setmine')
+
+setmine.init(function() {
+    console.log("Artists retrieved successfully.")
+    console.log("TEST INIT")
+})
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
-router.get('/api/search/:name', function(req, res, next){
+
+router.get('/api/search/:name', function(req, res, next) {
 
     //TODO: Make it dynamic
-    
-    var artists = [];
-    artists.push('Skrillex');
-    artists.push('Diplo');
-    artists.push('Kayne West');
-    artists.push('Jay Z');
-    artists.push('12th Planet');
-    artists.push('Calvin Harris');
-    artists.push('Zeds Dead');
-    artists.push('Bassnectar');
-    artists.push('Dilon Francis');
-    
-    var result = [];
-    for (var i = 0; i < artists.length; i++) {
-        if (artists[i].toLowerCase().indexOf(req.params.name.toLowerCase())> -1){
-            result.push(artists[i]);
-        }
-    };
-    
 
-    res.json(result);
+    var result = [];
+
+    if(req.params.name.length > 2) {
+        var artists = setmine.artists
+        for (var i = 0; i < artists.length; i++) {
+            if (artists[i].artist.toLowerCase().indexOf(req.params.name.toLowerCase())> -1) {
+                result.push(artists[i].artist)
+            }
+        };
+    }
+    res.json(result)
+
+
 });
 router.get('/api/artist/:artistName/:page/:count', function(req, res, next){
     // TODO: Make dynamic
