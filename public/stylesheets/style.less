@@ -1,20 +1,47 @@
 @import "mixins.less";
+@import "variablesSS.less";
 
 /* CSS */ 
 
 body {
+  margin:0; 
+  font-family: 'Nunito', sans-serif;
+}
+
+#landing-page {
   background-image: url("../stylesheets/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%; 
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white; 
-  .flexContainer(column, vertical); 
-  margin: 0 15vw;
+  .flexContainer(column, vertical);  
 }
 
 a {
   color: #00B7FF;
+}
+
+.artist-container {
+  background-image: url("../stylesheets/bassnectar.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: 100%; 
+  .flexContainer(column, vertical); 
+  .flex(1); 
+  color:white; 
+}
+
+.artist-title-container {
+ .flexContainer();  
+}
+
+.artist-title {
+  .flex(0); 
+  background-color: #2ecc74;
+  text-align: left;
+  font-size: 6vh;
+  padding: 0vh 1vw;
+  font-weight: 900;
 }
 
 .buffer {
@@ -27,15 +54,27 @@ a {
     .flex(6);
 }
 
+.page {
+    height:100vh;
+    width:100vw;
+    .flexContainer(column, vertical); 
+}
+
 .search-container {
 	background-color: rgba(0,0,0,.5);
 	border-radius: 10px; 
 	.flexContainer(column, vertical);
 	.flex(); 
 	background-color: rgba(46,204,116,0.8);
-  	border: 3px solid #00b16a;
+  border: 3px solid #00b16a;
+  margin: 0vh 10vw; 
 }
 .search-bar {
 	font-size:4vh; 
 	margin: 0vh 1vw; 
+}
+.setstory-object {
+  background-color: #ECECEC; 
+  .flexContainer(column, vertical); 
+  .flex(1); 
 }
