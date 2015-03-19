@@ -1,37 +1,58 @@
 var setlistfm = require('./setlistfm');
 var openaura = require('./openaura');
+var moment = require('moment');
+
 var _ = require('lodash');
 
 var unified = {};
 
 unified.story = function(artist, cb){
-    setlistfm.getArtistGigs(artist, function(sets){
-        openaura.getSocialFeed(artist,100,0,function(media){
-            var unifiedFeed = sets;
-            var numSpliced = 0;
-            // For last 10 sets, splice in particles
-            for (var i = 0 ; i < 10 ; i++){
-                var mostRecentSet = sets[i].eventDate;
-                if(mostRecentSet) {
-                    mostRecentSet = mostRecentSet.substr(0,10);
-                    for(var j = 0 ; j < media.particles.length ; j++) {
-                        var p = media.particles[j];
-                        if ((p.date.substr(0, 7) == mostRecentSet.substr(0, 7))) {
-                            // Month + year matches
-                            var particleDay = Number(p.date.substr(8, 2));
-                            var setDay = Number(mostRecentSet.substr(8, 2));
-                            if (Math.abs(particleDay - setDay) <= 1) {
-                                unifiedFeed.splice(i + numSpliced, 0, p);
-                                numSpliced++;
-                                // Only get one social media max per set
-                                break;
-                            }
-                        }
+    setlistfm.getArtistGigs(artist, function(data){
+        openaura.getSocialFeed(artist,250,0,function(result){
+            var media = result.particles;
+            for (var i = 0; i < data.length; i++) {
+                var current = moment(data[i].eventDate);
 
-                    }
-                }
-            }
-            cb(unifiedFeed);
+                data[i].media = [];
+                for (var j = media.length - 1; j >= 0; j--) {
+                                    
+
+                    var mediaDate = moment(media[j].date);
+                    var daysBetween = current.diff(mediaDate, 'days',true); 
+                    
+                    if (daysBetween >=0 && daysBetween <= 3){
+                        var newOne = media[j].media;
+                              
+                        //Check if is smaller, not add it
+                        if (data[i].media.length ===0){
+                            data[i].media.push(newOne);  
+                        }
+                        else {
+                            try{
+                                for (var z = 0; z < data[i].media.length; z++) {
+                                    var currentMedia = data[i].media[z];
+                                    console.log(newOne,currentMedia);
+                                    var newId = newOne.oa_media_id.substring(0,newOne.oa_media_id.length-4);
+                                    var currentId = data.oa_media_id.substring(0,data.oa_media_id.length-4);
+                                    console.log(newId,currentId);
+                                    var isSameImage = newId.indexOf(currentId) > -1;
+                                    var isBigger = newOne.width > currentMedia.width;
+                                    if (isSameImage && isBigger){
+                                        data[i].media.push(newOne);    
+                                    }
+                                    
+                                };
+                            }catch(e){
+                                console.log(e);
+                                data[i].media.push(newOne);
+                            }
+
+                        }
+                    }  
+                };
+            };
+
+            cb(data);
             return 0;
         })
 

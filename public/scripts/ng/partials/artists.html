@@ -19,15 +19,17 @@
 	    			<h1>{{concert.location.city}}, {{concert.location.country}} | {{concert.eventDate}}</h1>
 	    			<h4> {{concert.minutes}} minutes  | {{concert.tracks.length}} tracks  | {{concert.bmp}} BPM  || {{concert.media.length}} media objects</h4>
 	    			<h3 ng-show="concert.tracks.length === 0"> No Sets for this concert :-(</h3>
-	    			<div ng-repeat='mediaGroup in concert.media'>
-	    				<div ng-repeate='m in mediaGroup'>
-	    					<div ng-hide="isVideo(m)">
+	    			<div ng-repeat='media in concert.media'>
+	    				<div ng-repeat='m in media'>
+	    				<h1>{{m.width}}</h1>
+	    					<div showImage="showImage(m)">
 		    					<img ng-src="{{m.url}}">
 		    				</div>
-		    				<div ng-show="isVideo(m)">
+		    				<div ng-show="showVideo(m)">
 		    					<video ng-src="{{m.url}}">
 		    				</div>
-	    				</div>
+		    			</div>
+	    				
 	    			</div>
 	    			<div ng-repeat='track in concert.tracks'>
 

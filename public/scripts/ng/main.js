@@ -47,18 +47,27 @@ myApp.controller('ArtistsController', function($scope,$rootScope,$routeParams,$l
 	   
 	  // };
 	  // $scope.loadMore();
-	$scope.isVideo = function(media){
+	$scope.showVideo = function(media){
 		if (!media) return false;
-
-		console.log('t',media.type);
-		return media.type !== 'image';
+		return media.type ==='video';
 	};
-   	var url = "/api/gigs/"+ $scope.choice; 
+	$scope.showImage = function(media){
 
+		if (!media) return false;
+		if (
+			parseInt(media.width) >= 306 && 
+			parseInt(media.width) <= 800){
+			return true;
+		} 
+		else {
+			return media.type === 'image';
+		}
+
+	};
+	var url = "/api/story/"+ $scope.choice; 
+	
 	$http.get(url).success(function(data) {
-		
-		
-
 		$scope.sets= data;
 	});
+   	
 });
