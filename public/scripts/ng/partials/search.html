@@ -1,0 +1,16 @@
+<div class="page" id="landing-page">
+	<div class="buffer-big"></div>
+	<div class="search-container">
+		<h1 class="wow fadeIn" style="margin-left:1vw">How Has Your Favorite Artist Changed Over Time?</h1>	
+		<br>
+		<autocomplete class="search-bar" 
+			ng-model="choice" 
+			attr-placeholder="search artists..." 
+			click-activation="true" 
+			data="artists" 
+			on-type="updateArtists" 
+			on-select="gotoArtist"></autocomplete>
+		
+	</div>
+	<div class="buffer-big"></div>	
+</div>

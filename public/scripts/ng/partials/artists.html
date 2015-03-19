@@ -1,0 +1,24 @@
+<div class="page">
+	<div class="artist-container">
+		<div class="buffer-big"></div>
+		<a ng-click="back()" href=""><h1> Back </h1></a>
+		<div class="artist-title-container">
+			<div class="artist-title">{{choice}}</div>
+			<div class="buffer"></div>
+		</div>
+		<div class="artist-socialmedia-container"></div>
+		<div class="buffer"></div>
+	</div>
+	<div class="setstory-object">
+		<div>
+	    	<div>
+	    		<div ng-repeat='concert in sets'> 
+	    			<h1>{{concert.location}} | {{concert.eventDate}}</h1>
+	    			<div ng-repeat='track in concert.tracks'>
+	    				<h2>{{track.name}} by <small>{{track.originalArtist}}</small></h2>
+	    			</div>
+	    		</div>
+	    	</div>
+	</div>
+	</div>
+</div>
