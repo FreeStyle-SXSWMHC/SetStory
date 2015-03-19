@@ -43,7 +43,10 @@ var setlistFM = {
                     }
                     //console.log(data.setlists.setlist[i]);
                     gig.tracks = tracks;
-                    output.push(gig);
+                    if (gig.tracks.length > 0){
+                        output.push(gig);
+                    }
+                    
                 }
                 cb(output);
         }).on('error', function(data){
