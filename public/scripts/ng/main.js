@@ -36,7 +36,22 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
 
 
 myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routeParams,$location, $http) {
+	
 	$scope.choice = $routeParams.name;
+	
+	$scope.getArtistPhoto = function(){
+		
+		var url = "api/getArtistPic/" + $scope.choice; 
+		
+		$http.get(url).success(function(data) {
+			$scope.artistsPhoto = data;
+			console.log(data,$scope.choice);
+		});
+		
+	}
+	$scope.getArtistPhoto();
+
+
 	$scope.back = function(){
 		$location.path("/");
 	}
@@ -76,7 +91,7 @@ myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routePara
 	var url = "/api/story/"+ $scope.choice; 
 	
 	$http.get(url).success(function(data) {
-		$scope.sets= data;
+		// $scope.sets= data;
 	});
    	
 });
