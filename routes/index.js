@@ -8,9 +8,17 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
 
-router.get('/api/artist/:artistName', function(req, res, next){
+router.get('/api/artist/:artistName/:page/:count', function(req, res, next){
     // TODO: Make dynamic
-    res.json(skrillex);
+    console.log(req.params.page);
+    console.log(req.params.artistName);
+    if (parseInt(req.params.page) > 5){
+        res.json({sets:[]});
+    }
+    else{
+        res.json(skrillex);
+    }
+    
 });
 
 router.get('/api/genres/:artistName', function(req, res, next){
