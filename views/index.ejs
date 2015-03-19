@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/bower_components/wow/css/libs/animate.css"/>
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -42,22 +43,16 @@
 	</div>
 	<div class="setstory-object">
 		<div ng-app='myApp' ng-controller='DemoController'>
-	  <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
-	    <div ng-repeat='concert in sets'> 
-	    	<h1>{{concert.location}}</h1>
-	    <div ng-repeat='track in concert.tracks'>
-	    	<h2>{{track.name}} by <small>{{track.artist}}</small></h2>
-
-	    </div>
-
-	    
-	  </div>
-	</div>
-	
-
-
+	    	<div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+	    		<div ng-repeat='concert in sets'> 
+	    			<h1>{{concert.location}}</h1>
+	    			<div ng-repeat='track in concert.tracks'>
+	    				<h2>{{track.name}} by <small>{{track.artist}}</small></h2>
+	    			</div>
+	    		</div>
+	    	</div>
 		</div>
-</div>	
+    </div>	
 
 	
     <script src="/scripts/services.js"></script>
