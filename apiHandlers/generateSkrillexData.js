@@ -2,7 +2,7 @@ var musicgraph = require('./musicgraph');
 var setlistfm = require('./setlistfm');
 
 setlistfm.getArtistGigs('Skrillex', function(sets){
-    for (var i = 10; i < sets.length ; i++){
+    for (var i = 14; i < 18; i++){
         if (sets[i].tracks && sets[i].tracks[0]){
             var setBPM = 0;
             var setLength = sets[i].tracks.length;

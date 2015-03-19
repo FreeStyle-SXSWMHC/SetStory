@@ -37,6 +37,10 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
 
 myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
 	
+
+
+
+
 	$scope.choice = $routeParams.name;
 	
 	$scope.getArtistPhoto = function(){
@@ -101,16 +105,9 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 	};
 	var url = "/api/story/"+ $scope.choice; 
 	
-	var svg = d3.select("svg");
-
-	var circle = svg.selectAll("circle")
-	    .data([32, 57, 112, 293]);
-
-	var circleEnter = circle.enter().append("circle");
+	
 
 	$http.get(url).success(function(data) {
-		
-		
 		$scope.sets= data;
 		var mockDatasetUrl = '/SkrillexSets.json';
 		$http.get(mockDatasetUrl).success(function(metadata) {
@@ -124,3 +121,6 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 	});
 
 });
+
+
+

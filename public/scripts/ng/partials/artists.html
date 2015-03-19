@@ -2,8 +2,8 @@
 <div class="half-page artist-container">
 	<a ng-click="back()" href=""><h1> Back </h1></a>
 	<div class="artist-title-container">
-		<div class="artist-title wow fadeIn">{{choice}}</div>
-		 <h1>{{sets.length}} concerts</h1>  
+		<div class="artist-title wow fadeIn">{{choice}}:</div>
+		 <div class="concert-title">{{sets.length}} concerts</div>  
 
 		<div class="buffer"></div>
 	</div>
@@ -67,9 +67,7 @@
 	    			</div>	
     			</div>
     			<div class="genres-viz">
-	    			<div ng-repeat='genre in concert.meta.genres'>
-	    				<h3 ng-class="'genre-' + genre.count">{{genre.name}} <strong> {{genre.count}} </strong> </h3>
-	    			</div>
+    				<d3circles dataset="concert.meta.genres"> </d3circles>
     			</div>
     			<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
 
