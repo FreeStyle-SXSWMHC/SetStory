@@ -2,18 +2,22 @@
 <div class="half-page artist-container">
 	<a ng-click="back()" href=""><h1> Back </h1></a>
 	<div class="artist-title-container">
-		<div class="artist-title wow fadeIn">{{choice}}</div>
-		 <h1>{{sets.length}} concerts</h1>  
+		<div class="artist-title wow fadeIn">{{choice}}:</div>
+		 <div class="concert-title">{{sets.length}} concerts</div>  
 
 		<div class="buffer"></div>
 	</div>
 	<div ng-show="artistsPhoto" class="artist-socialmedia-container">
 		<img ng-src="{{artistsPhoto}}" class="wow fadeIn"></div>
-  <div class="artist-general-info">
-        <p>Country: {{artistData.country_of_origin}}</p>
-        <p>Genre: {{artistData.main_genre}}</p>
-        <p>Decade: {{artistData.decade}}</p>
-  </div>
+	<div class="artist-info-container">
+		<div class="buffer"></div>	
+		<div class="artist-general-info">
+	        <p>Country: {{artistData.country_of_origin}}</p>
+	        <p>Genre: {{artistData.main_genre}}</p>
+	        <p>Decade: {{artistData.decade}}</p>
+  		</div>
+	</div>
+ 
 </div>
 <div class="half-page  setstory-object">
 	<div>

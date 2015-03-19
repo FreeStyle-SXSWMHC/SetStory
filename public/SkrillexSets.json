@@ -1,4 +1,4 @@
-[
+[{},{},
    {
       "bpm_average":94.51,
       "duration":183,
@@ -37,29 +37,35 @@
          }
       ]
    },
+
+   {},
+   {},
    {
-      "bpm_average":64.35,
-      "duration":101.2,
+      "bpm_average":48.58,
+      "duration":79.2,
       "genres":[
          {
             "name":"alternative/indie",
             "count":2
          },
+        { "name" : "electronica/dance",
+          "count" : 5
+        },
          {
             "name":"rap/hip hop",
             "count":7
          },
          {
             "name":"jazz",
-            "count":2
+            "count":1
          },
          {
             "name":"rock",
             "count":2
          },
          {
-            "name":"world",
-            "count":1
+            "name":"pop",
+            "count":2
          },
          {
             "name":"classical/opera",
@@ -68,16 +74,20 @@
       ]
    },
    {
-      "bpm_average":77.95,
+      "bpm_average":62.1,
       "duration":90,
       "genres":[
          {
-            "name":"alternative/indie",
-            "count":3
-         },
+          "name":"alternative/indie",
+          "count":3
+        },
+        {
+          "name":"electronica/dance",
+          "count":4
+        },
          {
             "name":"rap/hip hop",
-            "count":10
+            "count":7
          },
          {
             "name":"jazz",
@@ -85,12 +95,291 @@
          },
          {
             "name":"rock",
-            "count":1
+            "count":2
          },
          {
-            "name":"world",
+            "name":"pop",
             "count":3
-         }
+         },
+        {
+          "name":"classical/opera",
+          "count":3
+        }
       ]
-   }
+   },
+  {},
+  {},
+  {},
+  {
+    "bpm_average": 52.3,
+    "duration": 100.1,
+    "genres": [
+      {
+        "name": "alternative/indie",
+        "count": 3
+      },
+      {
+        "name": "electronica/dance",
+        "count": 3
+      },
+      {
+        "name": "rap/hip hop",
+        "count": 7
+      },
+      {
+        "name": "jazz",
+        "count": 1
+      },
+      {
+        "name": "rock",
+        "count": 2
+      },
+      {
+        "name": "pop",
+        "count": 4
+      },
+      {
+        "name": "classical/opera",
+        "count": 2
+      },
+      {
+        "name": "world",
+        "count": 1
+      }
+    ]
+  },
+  {},
+  {
+  "bpm_average": 100.2,
+  "duration": 87.5,
+  "genres": [
+    {
+      "name": "alternative/indie",
+      "count": 9
+    },
+    {
+      "name": "electronica/dance",
+      "count": 6
+    },
+    {
+      "name": "rap/hip hop",
+      "count": 12
+    },
+    {
+      "name": "jazz",
+      "count": 2
+    },
+    {
+      "name": "rock",
+      "count": 3
+    },
+    {
+      "name": "pop",
+      "count": 6
+    },
+    {
+      "name": "classical/opera",
+      "count": 3
+    },
+    {
+      "name": "world",
+      "count": 1
+    },
+    {
+      "name": "christian/gospel",
+      "count": 1
+    }
+  ]
+},
+  {
+    "bpm_average": 112.4,
+    "duration": 65.2,
+    "genres": [
+      {
+        "name": "alternative/indie",
+        "count": 8
+      },
+      {
+        "name": "electronica/dance",
+        "count": 7
+      },
+      {
+        "name": "rap/hip hop",
+        "count": 8
+      },
+      {
+        "name": "jazz",
+        "count": 1
+      },
+      {
+        "name": "rock",
+        "count": 2
+      },
+      {
+        "name": "pop",
+        "count": 4
+      },
+      {
+        "name": "classical/opera",
+        "count": 1
+      },
+      {
+        "name": "christian/gospel",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "bpm_average": 103.6,
+    "duration": 115.9,
+    "genres": [
+      {
+        "name": "alternative/indie",
+        "count": 11
+      },
+      {
+        "name": "electronica/dance",
+        "count": 11
+      },
+      {
+        "name": "rap/hip hop",
+        "count": 15
+      },
+      {
+        "name": "jazz",
+        "count": 3
+      },
+      {
+        "name": "rock",
+        "count": 3
+      },
+      {
+        "name": "pop",
+        "count": 6
+      },
+      {
+        "name": "classical/opera",
+        "count": 2
+      },
+      {
+        "name": "christian/gospel",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "bpm_average": 96.6,
+    "duration": 107.3,
+    "genres": [
+      {
+        "name": "alternative/indie",
+        "count": 9
+      },
+      {
+        "name": "electronica/dance",
+        "count": 11
+      },
+      {
+        "name": "rap/hip hop",
+        "count": 16
+      },
+      {
+        "name": "jazz",
+        "count": 3
+      },
+      {
+        "name": "rock",
+        "count": 3
+      },
+      {
+        "name": "pop",
+        "count": 5
+      },
+      {
+        "name": "classical/opera",
+        "count": 1
+      },
+      {
+        "name": "christian/gospel",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "bpm_average": 102.6,
+    "duration": 94.3,
+    "genres": [
+      {
+        "name": "alternative/indie",
+        "count": 9
+      },
+      {
+        "name": "electronica/dance",
+        "count": 8
+      },
+      {
+        "name": "rap/hip hop",
+        "count": 17
+      },
+      {
+        "name": "jazz",
+        "count": 5
+      },
+      {
+        "name": "rock",
+        "count": 4
+      },
+      {
+        "name": "pop",
+        "count": 4
+      },
+      {
+        "name": "classical/opera",
+        "count": 1
+      },
+      {
+        "name": "christian/gospel",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "bpm_average": 102.6,
+    "duration": 94.3,
+    "genres": [
+      {
+        "name": "alternative/indie",
+        "count": 9
+      },
+      {
+        "name": "electronica/dance",
+        "count": 8
+      },
+      {
+        "name": "rap/hip hop",
+        "count": 17
+      },
+      {
+        "name": "jazz",
+        "count": 5
+      },
+      {
+        "name": "rock",
+        "count": 4
+      },
+      {
+        "name": "pop",
+        "count": 4
+      },
+      {
+        "name": "classical/opera",
+        "count": 1
+      },
+      {
+        "name": "christian/gospel",
+        "count": 2
+      }
+    ]
+  },
+  {}
 ]
