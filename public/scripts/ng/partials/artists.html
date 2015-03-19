@@ -12,10 +12,14 @@
 	<div class="setstory-object">
 		<div>
 	    	<div>
+	    		
 	    		<div ng-repeat='concert in sets'> 
-	    			<h1>{{concert.location}} | {{concert.eventDate}}</h1>
+	    			<h1>{{concert.location.city}} | {{concert.eventDate}}</h1>
+	    			<h3 ng-show="concert.tracks.length === 0"> No Sets for this concert :-(</h3>
 	    			<div ng-repeat='track in concert.tracks'>
-	    				<h2>{{track.name}} by <small>{{track.originalArtist}}</small></h2>
+	    				<h2>{{track.name}} 
+	    					<span ng-show="track.originalArtist">by <small>{{track.originalArtist}}</small></span>
+	    				</h2>
 	    			</div>
 	    		</div>
 	    	</div>
