@@ -4,7 +4,7 @@ angular.module('myApp')
   return {
     restrict: 'E',
     replace: true,
-    template: '<div class="circle-graph"></div>',
+    template: '<div class="circle-graph"><h3 class="reference"></h3></div>',
     scope: {
       // creates a scope variable in your directive
       // called `dataset` bound to whatever was passed
@@ -29,8 +29,15 @@ angular.module('myApp')
         .append("svg:g")                //make a group to hold our pie chart
             .attr("transform", "translate(" + r + "," + r + ")")    //move the center of the pie chart from 0, 0 to radius, radius
 
-    var arc = d3.svg.arc()              //this will create <path> elements for us using arc data
-        .outerRadius(r);
+  
+
+        var arc = d3.svg.arc()
+            .innerRadius(0)
+            .outerRadius(r);
+
+    var arcOver = d3.svg.arc()
+            .innerRadius(0)
+                .outerRadius(150 + 10);
 
     var pie = d3.layout.pie()           //this will create arc data for us given a list of values
         .value(function(d) { return d.count; });    //we must tell it out to access the value of each element in our data array
@@ -44,6 +51,22 @@ angular.module('myApp')
         arcs.append("svg:path")
                 .attr("fill", function(d, i) { return color(i); } ) //set the color for each slice to be chosen from the color function defined above
                 .attr("d", arc);                                    //this creates the actual SVG path using the associated data (pie) with the arc drawing function
+
+
+              var $referenceLabel = $(element.context).find('h3.reference');
+        arcs.on("mouseover", function(d) {
+                  
+                  $referenceLabel.html(d.data.count + '-' + d.data.name );
+                  d3.select(this).transition()
+                     .duration(1000)
+                     .attr("d", arcOver);
+                 })
+        .on("mouseout", function(d) {
+                  $referenceLabel.html('')
+                  d3.select(this).transition()
+                     .duration(1000)
+                     .attr("d", arc);
+                 });
 
         arcs.append("svg:text")                                     //add a label to each slice
                 .attr("transform", function(d) {                    //set the label's origin to the center of the arc
