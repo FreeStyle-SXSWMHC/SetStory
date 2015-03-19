@@ -31,17 +31,22 @@ decibel.getArtistGenres = function(artist, cb){
 }
 
 // DECIBEL IS BROKEN RIGHT NOW
-decibel.getSongInfo = function(title,artist,cb){
-    // Get all info about song
-    console.log(artist);
-    rest.get('https://rest.decibel.net/v3/Recordings', {
-        query : {'artists' : artist, 'depth' : 'Genres'},
-        headers : {'DecibelAppID' : decibel.appId, 'DecibelAppKey' : decibel.appKey}}).on('complete', function(data){
-
-        console.log(data);
+decibel.getSongInfo = function(title,artist,cb) {
+    // Get artist id
+    rest.get('https://rest.decibel.net/v3/Artists', {
+        query: {'name': artist},
+        headers: {'DecibelAppID': decibel.appId, 'DecibelAppKey': decibel.appKey}
+    }).on('complete', function (data) {
+        console.log(data)
         cb(data);
     })
-}
+};
+    //rest.get('https://rest.decibel.net/v3/Recordings', {
+    //    query : {'artists' : artist, artistSearchType: 'PartialName', 'depth' : 'Genres', pageSize : 3},
+    //    headers : {'DecibelAppID' : decibel.appId, 'DecibelAppKey' : decibel.appKey}}).on('complete', function(data){
+    //    console.log(data);
+    //    cb(data);
+    //})
 
 
 
