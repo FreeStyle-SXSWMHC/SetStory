@@ -18,7 +18,7 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
     $rootScope.detail = false;
         $scope.artists = [];
 
-        // gives another movie array on change
+        // gives another movie array on changez
         $scope.updateArtists = function(typed){
             // MovieRetriever could be some service returning a promise
             var url = '/api/search/' + typed;
