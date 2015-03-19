@@ -1,0 +1,49 @@
+.background(@color:@setmine-royal-blue, @textColor:@setmine-gray) {
+    background-color:@color;
+    color:@textColor;
+}
+.coloredBackground(@color:@setmine-royal-blue, @alpha:100%) {
+    background-color: fade(@color, @alpha);
+}
+.flexContainer(@direction:row, @oldDirection:horizontal, @wrap:nowrap)
+{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient:@oldDirection;
+  -moz-box-orient:@oldDirection;
+  -ms-box-orient:@oldDirection;
+  -webkit-flex-direction:@direction;
+  flex-direction:@direction;
+  webkit-flex-flow: @direction @wrap;
+  -moz-flex-flow: @direction @wrap;
+  -ms-flex-flow: @direction @wrap;
+  flex-flow: @direction @wrap;
+  flex-wrap: @wrap;
+  -webkit-flex-wrap: @wrap;
+  -moz-flex-wrap: @wrap;
+  -ms-flex-wrap: @wrap;
+}
+.flex(@flexGrow:1, @flexShrink: 1, @flexBasis: auto)
+{
+  -webkit-box-flex: @flexGrow @flexShrink @flexBasis;
+  -moz-box-flex: @flexGrow @flexShrink @flexBasis; 
+  -webkit-flex: @flexGrow @flexShrink @flexBasis;
+  -ms-flex: @flexGrow @flexShrink @flexBasis;
+  flex: @flexGrow @flexShrink @flexBasis;
+}
+.gradient (@origin: bottom, @fallback: @setmine-medium-purple,  @stops){
+    background-color: @fallback;
+    background: -webkit-linear-gradient(@origin, @stops) no-repeat;
+    background:    -moz-linear-gradient(@origin, @stops) no-repeat;
+    background:    -ms-linear-gradient(@origin, @stops) no-repeat;
+    background:      -o-linear-gradient(@origin, @stops) no-repeat;
+    background:         linear-gradient(@origin, @stops) no-repeat;
+}
+.transition(@durationTime:@defaultDuration, @transitionType:ease-out, @transitionProperty:all)
+{
+  transition: @transitionProperty 1s @transitionType;
+  transition-duration: @durationTime;
+}

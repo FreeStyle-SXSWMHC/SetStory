@@ -1,0 +1,41 @@
+@import "mixins.less";
+
+/* CSS */ 
+
+body {
+  background-image: url("../stylesheets/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%; 
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white; 
+  .flexContainer(column, vertical); 
+  margin: 0 15vw;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.buffer {
+    .flex()!important;
+}
+.buffer-big {
+    .flex(3);
+}
+.buffer-bigger {
+    .flex(6);
+}
+
+.search-container {
+	background-color: rgba(0,0,0,.5);
+	border-radius: 10px; 
+	.flexContainer(column, vertical);
+	.flex(); 
+	background-color: rgba(46,204,116,0.8);
+  	border: 3px solid #00b16a;
+}
+.search-bar {
+	font-size:4vh; 
+	margin: 0vh 1vw; 
+}

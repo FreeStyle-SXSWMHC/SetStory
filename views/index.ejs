@@ -1,45 +1,33 @@
 <html>
 <head>
+
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/d3/d3.min.js"></script>
     <script src="/bower_components/wow/dist/wow.min.js"></script>
+
     <script src="/bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="/bower_components/waypoints/lib/shortcuts/infinite.min.js"></script>
 
 
 	<script type='text/javascript' src='/bower_components/angularjs/angular.min.js'></script>
 	<script type='text/javascript' src='/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js'></script>
-    
+
+
     <link rel="stylesheet" type="text/css" href="/bower_components/wow/css/libs/animate.css"/>
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 
 </head>
 <body>
-	<div class="search-container">
-		<h1 class="wow fadeIn"> Search Artists</h1>	
-	</div>
-	<div ng-app='myApp' ng-controller='ArtistController'>
 
-	  <div 
-	  	infinite-scroll='concerts.nextPage()' 
-	  	infinite-scroll-disabled='concerts.busy' 
-	  	infinite-scroll-distance='1'>
-	    <div ng-repeat='c in concerts.items'>
-	    	<!-- TODO: WHHHYYY???? -->
-	    	<div ng-repeat='a in c'>
-	    		<div ng-repeat='t in a.tracks'>
-			      <span class='title'>
-			        <h1> {{t.name}}</h1>
-			      </span>
-			      <small>by {{t.artist}}
-			      </small>
-			      <div style='clear: both;'></div>
-			     </div>
-		    </div>
-		</div>
-	    <div ng-show='concerts.busy'>Loading data...</div>
-	  </div>
+	<div class="buffer-big"></div>
+	<div class="search-container">
+		<h1 class="wow fadeIn" style="margin-left:1vw">How Has Your Favorite Artist Changed Over Time?</h1>	
+		<br>
+		<input class="search-bar" id="search-bar" type="text" autocomplete="off" placeholder="search artists...">
 	</div>
+	<div class="buffer-big"></div>	
+
+	
     <script src="/scripts/services.js"></script>
     <script src="/scripts/app.js"></script>
 
