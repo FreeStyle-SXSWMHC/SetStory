@@ -17,8 +17,9 @@ var setlistFM = {
                     var tracks = [];
                     var current = data.setlists.setlist[i];
                     gig.location = {};
-                    gig.location.city = current.venue[0].city[0].$.name
-                    gig.location.state = current.venue[0].city[0].$.state
+                    gig.location.city = current.venue[0].city[0].$.name;
+                    gig.location.state = current.venue[0].city[0].$.state;
+                    gig.location.country = current.venue[0].city[0].country[0].$.name;
 
                     for (var key in current.$){
                         gig[key] = current.$[key]
