@@ -31,10 +31,8 @@ unified.story = function(artist, cb){
                             try{
                                 for (var z = 0; z < data[i].media.length; z++) {
                                     var currentMedia = data[i].media[z];
-                                    console.log(newOne,currentMedia);
                                     var newId = newOne.oa_media_id.substring(0,newOne.oa_media_id.length-4);
                                     var currentId = data.oa_media_id.substring(0,data.oa_media_id.length-4);
-                                    console.log(newId,currentId);
                                     var isSameImage = newId.indexOf(currentId) > -1;
                                     var isBigger = newOne.width > currentMedia.width;
                                     if (isSameImage && isBigger){
@@ -43,7 +41,7 @@ unified.story = function(artist, cb){
                                     
                                 };
                             }catch(e){
-                                console.log(e);
+                                //console.log(e);
                                 data[i].media.push(newOne);
                             }
 

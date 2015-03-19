@@ -49,7 +49,6 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 		
 		$http.get(url).success(function(data) {
 			$scope.artistsPhoto = data;
-			console.log(data,$scope.choice);
 		});
 		
 	}
@@ -60,7 +59,6 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 
         $http.get(url).success(function(data) {
             $scope.artistData = data;
-            console.log('artist data', data);
         })
 
     }
@@ -79,12 +77,10 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 	  // $scope.loadMore();
 	$scope.showVideo = function(media){
 		if (!media) return false;
-		console.log(media.type);
 		return media.type ==='video';
 	};
 	$scope.showEmbed = function(media){
 		if (!media) return false;
-		console.log(media.type);
 		return media.type ==='embed';
 	}
 	$scope.showVideoUrl = function(url){
