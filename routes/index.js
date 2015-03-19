@@ -8,7 +8,31 @@ var openaura = require('../apiHandlers/openaura');
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
+router.get('/api/search/:name', function(req, res, next){
 
+    //TODO: Make it dynamic
+    
+    var artists = [];
+    artists.push('Skrillex');
+    artists.push('Diplo');
+    artists.push('Kayne West');
+    artists.push('Jay Z');
+    artists.push('12th Planet');
+    artists.push('Calvin Harris');
+    artists.push('Zeds Dead');
+    artists.push('Bassnectar');
+    artists.push('Dilon Francis');
+    
+    var result = [];
+    for (var i = 0; i < artists.length; i++) {
+        if (artists[i].toLowerCase().indexOf(req.params.name.toLowerCase())> -1){
+            result.push(artists[i]);
+        }
+    };
+    
+
+    res.json(result);
+});
 router.get('/api/artist/:artistName/:page/:count', function(req, res, next){
     // TODO: Make dynamic
     console.log(req.params.page);

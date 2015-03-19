@@ -5,13 +5,12 @@
     <script src="/bower_components/d3/d3.min.js"></script>
     <script src="/bower_components/wow/dist/wow.min.js"></script>
 
-    <script src="/bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
-    <script src="/bower_components/waypoints/lib/shortcuts/infinite.min.js"></script>
-
 
 	<script type='text/javascript' src='/bower_components/angularjs/angular.min.js'></script>
 	<script type='text/javascript' src='/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js'></script>
+	<script type="text/javascript" src="/bower_components/allmighty-autocomplete/script/autocomplete.js"></script>
 
+<link rel="stylesheet" type="text/css" href="/bower_components/allmighty-autocomplete/style/autocomplete.css"/>
 
     <link rel="stylesheet" type="text/css" href="/bower_components/wow/css/libs/animate.css"/>
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
@@ -19,31 +18,37 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body ng-app="myApp">
 
-<div class="page" id="landing-page">
+<div class="page" id="landing-page"  ng-controller="SearchController" ng-show="$root.main">
 	<div class="buffer-big"></div>
 	<div class="search-container">
 		<h1 class="wow fadeIn" style="margin-left:1vw">How Has Your Favorite Artist Changed Over Time?</h1>	
 		<br>
-		<input class="search-bar" id="search-bar" type="text" autocomplete="off" placeholder="search artists...">
+		<autocomplete class="search-bar" 
+			ng-model="choice" 
+			attr-placeholder="search artists..." 
+			click-activation="true" 
+			data="artists" 
+			on-type="updateArtists" 
+			on-select="gotoArtist"></autocomplete>
+		
 	</div>
 	<div class="buffer-big"></div>	
 </div>
 
-<div class="page">
+<div class="page" ng-show="$root.detail" ng-controller='DemoController'>
 	<div class="artist-container">
 		<div class="buffer-big"></div>
 		<div class="artist-title-container">
-			<div class="artist-title">Skrillex</div>
+			<div class="artist-title">{{$root.choice}}</div>
 			<div class="buffer"></div>
 		</div>
 		<div class="artist-socialmedia-container"></div>
 		<div class="buffer"></div>
 	</div>
 	<div class="setstory-object">
-		<div ng-app='myApp' ng-controller='DemoController'>
-<<<<<<< HEAD
+		<div>
 	    	<div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
 	    		<div ng-repeat='concert in sets'> 
 	    			<h1>{{concert.location}}</h1>
@@ -52,24 +57,9 @@
 	    			</div>
 	    		</div>
 	    	</div>
-=======
-	  <div infinite-scroll='loadMore()' infinite-scroll-distance='1'>
-	    <div ng-repeat='concert in sets'> 
-	    	<h1>{{concert.location}}</h1>
-	    <div ng-repeat='track in concert.tracks'>
-	    	<h2>{{track.name}} by <small>{{track.artist}}</small></h2>
-
-	    </div>
-
-	    
-	  </div>
 	</div>
-	
-
-
->>>>>>> origin/master
-		</div>
-    </div>	
+	</div>
+</div>
 
 	
     <script src="/scripts/services.js"></script>
