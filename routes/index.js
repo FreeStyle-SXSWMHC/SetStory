@@ -30,9 +30,15 @@ router.get('/api/getArtistPic/:artistName', function(req, res, next){
 
 
 router.get('/api/genres/:artistName', function(req, res, next){
-    decibel.getArtistGenres(req.params.artistName, function(data){
-        res.json(data);
-    })
+    console.log('hey', req.params.artistName);
+    try{
+        decibel.getArtistGenres(req.params.artistName, function(data){
+            res.json(data);
+        });
+    }catch(e){
+        console.log(e);
+
+    }
 });
 
 router.get('/api/songInfo', function(req, res, next){
