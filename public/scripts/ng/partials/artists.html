@@ -21,12 +21,12 @@
 	    			<h3 ng-show="concert.tracks.length === 0"> No Sets for this concert :-(</h3>
 	    			<div ng-repeat='media in concert.media'>
 	    				<div ng-repeat='m in media'>
-	    				<h1>{{m.width}}</h1>
-	    					<div showImage="showImage(m)">
+	    				
+	    					<div ng-show="showImage(m)">
 		    					<img ng-src="{{m.url}}">
 		    				</div>
 		    				<div ng-show="showVideo(m)">
-		    					<video ng-src="{{m.url}}">
+		    					<video controls ng-src="{{showVideoUrl(m.url)}}">
 		    				</div>
 		    			</div>
 	    				

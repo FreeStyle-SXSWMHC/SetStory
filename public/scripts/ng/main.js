@@ -35,7 +35,7 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
 });
 
 
-myApp.controller('ArtistsController', function($scope,$rootScope,$routeParams,$location, $http) {
+myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routeParams,$location, $http) {
 	$scope.choice = $routeParams.name;
 	$scope.back = function(){
 		$location.path("/");
@@ -51,17 +51,20 @@ myApp.controller('ArtistsController', function($scope,$rootScope,$routeParams,$l
 		if (!media) return false;
 		return media.type ==='video';
 	};
+	$scope.showVideoUrl = function(url){
+		return $sce.trustAsResourceUrl(url);
+	}
 	$scope.showImage = function(media){
-
-		if (!media) return false;
-		if (
-			parseInt(media.width) >= 306 && 
-			parseInt(media.width) <= 800){
-			return true;
-		} 
-		else {
-			return media.type === 'image';
+		
+		
+		if (media.type === 'image')
+		{
+			if (parseInt(media.width) >= 600 && parseInt(media.width) <= 800){
+				return true;
+			}
+			else return false;
 		}
+		else {return false; }
 
 	};
 	var url = "/api/story/"+ $scope.choice; 
