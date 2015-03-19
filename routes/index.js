@@ -4,6 +4,7 @@ var skrillex = require('../data/Skrillex.json');
 var decibel = require('../apiHandlers/decibel');
 var openaura = require('../apiHandlers/openaura');
 var setlistFM = require('../apiHandlers/setlistfm');
+var unified = require('../apiHandlers/unified');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -84,5 +85,10 @@ router.get('/api/getSocialMedia', function(req, res, next){
     })
 })
 
+router.get('/api/story/:artistName', function(req, res, next){
+    unified.story(req.params.artistName, function(data){
+        res.json(data);
+    })
+})
 
 module.exports = router;

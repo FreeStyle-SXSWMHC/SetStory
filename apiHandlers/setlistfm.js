@@ -1,7 +1,7 @@
 var rest = require('restler');
 var appId = 'setlistfm';
 var appKey = '463c64bb-c052-49bd-9838-8c251c427668';
-
+var moment = require('moment');
 var setlistFM = {
     // Make a clean output of the mess that is the setlistfm api
     getArtistGigs: function(artist, cb){
@@ -24,6 +24,9 @@ var setlistFM = {
                     for (var key in current.$){
                         gig[key] = current.$[key]
                     }
+
+                    var date = moment(gig.eventDate,"DD-MM-YYYY");
+                    gig.eventDate = date.utc().format();
 
                     if (current.sets[0]) {
                         for(var j = 0 ; j < current.sets[0].set[0].song.length ; j++){
