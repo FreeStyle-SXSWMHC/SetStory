@@ -14,6 +14,7 @@
     "jade": "~1.9.2",
     "moment": "^2.9.0",
     "morgan": "~1.5.1",
+    "lodash": "*",
     "node-gracenote": "git://github.com/ddanninger/node-gracenote",
     "restler": "*",
     "serve-favicon": "~2.2.0"
