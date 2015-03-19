@@ -4,7 +4,7 @@ angular.module('myApp')
   return {
     restrict: 'E',
     replace: true,
-    template: '<div></div>',
+    template: '<div class="circle-graph"></div>',
     scope: {
       // creates a scope variable in your directive
       // called `dataset` bound to whatever was passed
@@ -14,8 +14,8 @@ angular.module('myApp')
     link: function(scope, element, attrs) {
       scope.$watch('dataset', function(dataset) {
 
-          var w = 300,                        //width
-          h = 300,                            //height
+          var w = 250,                        //width
+          h = 250,                            //height
           r = 100,                            //radius
           color = d3.scale.category20c();     //builtin range of colors
 
