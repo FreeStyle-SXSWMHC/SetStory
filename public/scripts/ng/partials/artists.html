@@ -8,8 +8,7 @@
 		<div class="buffer"></div>
 	</div>
 	<div ng-show="artistsPhoto" class="artist-socialmedia-container">
-		<img ng-src="{{artistsPhoto}}" class="wow fadeIn">
-	</div>
+		<img ng-src="{{artistsPhoto}}" class="wow fadeIn"></div>
 </div>
 <div class="half-page  setstory-object">
 	<div>
@@ -24,7 +23,23 @@
     				<p>{{concert.eventDate | amDateFormat:'YYYY'}}</p>
     				</div></div>
 	    			<h1>{{concert.location.city}}, {{concert.location.country}} </h1>
-	    			<h4> {{concert.minutes}} minutes  | {{concert.tracks.length}} tracks  | {{concert.bmp}} BPM  || {{concert.media.length}} media objects</h4>    				
+	    			<h4> {{concert.minutes}} minutes  | {{concert.tracks.length}} tracks  | {{concert.bmp}} BPM  || {{concert.media.length}} media objects</h4>
+	    			<h3 ng-show="concert.tracks.length === 0"> No Sets for this concert :-(</h3>
+    			</div>
+    			<div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
+    				<div ng-repeat='m in media' >
+    				
+    					<div ng-show="showImage(m)">
+	    					<img ng-src="{{m.url}}">
+	    				</div>
+	    				<!-- <div ng-show="showVideo(m)">
+	    					<video controls ng-src="{{showVideoUrl(m.url)}}">
+	    				</div>
+	    				<div ng-show="showEmbed(m)">
+	    					<iframe ng-src="{{showVideoUrl(m.url)}}">
+	    				</div> -->
+	    			</div>
+    				
     			</div>
     			<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
 
