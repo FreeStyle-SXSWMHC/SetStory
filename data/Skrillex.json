@@ -1,7 +1,26 @@
 {
-  "artist" : "Skrillex", "genre" : "EDM", "facebook" : "https://www.facebook.com/skrillex",
-  "sets": [{"tracks" : [{"name" : "Take U There", "artist" : "Jack U"}, {"name" : "Collard Greens", "artist" :
-  "ScHoolboy Q"}, {"name" : "Legends", "artist" : "Yellow Claw"}]}],
-  "location" : "Parque O'Higgins, Santiago, Chile", "year" : 2015, "tour" : "South American Tour 2015",
-  "attendees" : ">10,000"
+  "artist" : "Skrillex", 
+  "genre" : "EDM", 
+  "facebook" : "https://www.facebook.com/skrillex",
+  "sets": [
+  	{
+  		"location" : "Parque O'Higgins, Santiago, Chile", "year" : 2015, "tour" : "South American Tour 2015",
+  		"attendees" : ">10,000",
+  		"tracks" : [
+  			{"name" : "Take U There", "artist" : "Jack U"}, 
+  			{"name" : "Collard Greens", "artist" : "ScHoolboy Q"}, 
+  			{"name" : "Legends", "artist" : "Yellow Claw"},
+  			{"name" : "Take U There", "artist" : "Jack U"}, 
+  			{"name" : "Collard Greens", "artist" : "ScHoolboy Q"}, 
+  			{"name" : "Legends", "artist" : "Yellow Claw"},
+  			{"name" : "Take U There", "artist" : "Jack U"}, 
+  			{"name" : "Collard Greens", "artist" : "ScHoolboy Q"}, 
+  			{"name" : "Legends", "artist" : "Yellow Claw"},
+  			{"name" : "Take U There", "artist" : "Jack U"}, 
+  			{"name" : "Collard Greens", "artist" : "ScHoolboy Q"}, 
+  			{"name" : "Legends", "artist" : "Yellow Claw"}
+  		]
+  	}
+  ]
+  
 }
