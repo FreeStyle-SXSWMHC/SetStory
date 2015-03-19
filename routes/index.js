@@ -3,6 +3,7 @@ var router = express.Router();
 var skrillex = require('../data/Skrillex.json');
 var decibel = require('../apiHandlers/decibel');
 var openaura = require('../apiHandlers/openaura');
+var setlistFM = require('../apiHandlers/setlistfm');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -68,6 +69,13 @@ router.get('/api/genres/:artistName', function(req, res, next){
 router.get('/api/songInfo', function(req, res, next){
     decibel.getSongInfo(null,req.query.artist, function(data){
         console.log('hi');
+        console.log(data);
+        res.json(data);
+    })
+});
+
+router.get('/api/gigs/:artistName', function(req, res, next){
+    setlistFM.getArtistGigs(req.params.artistName, function(data){
         console.log(data);
         res.json(data);
     })
