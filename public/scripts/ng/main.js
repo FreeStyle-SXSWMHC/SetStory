@@ -88,7 +88,6 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 	}
 	$scope.showImage = function(media){
 		
-		
 		if (media.type === 'image')
 		{
 			if (parseInt(media.width) >= 620 && parseInt(media.width) <= 800){

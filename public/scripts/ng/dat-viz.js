@@ -4,7 +4,7 @@ angular.module('myApp')
   return {
     restrict: 'E',
     replace: true,
-    template: '<div class="circle-graph"><h3 class="reference"></h3></div>',
+    template: '<div><div class="circle-graph"></div><h3 class="reference"></h3></div>',
     scope: {
       // creates a scope variable in your directive
       // called `dataset` bound to whatever was passed
@@ -14,8 +14,8 @@ angular.module('myApp')
     link: function(scope, element, attrs) {
       scope.$watch('dataset', function(dataset) {
 
-          var w = 250,                        //width
-          h = 250,                            //height
+          var w = 200,                        //width
+          h = 200,                            //height
           r = 100,                            //radius
           color = d3.scale.category20c();     //builtin range of colors
 
@@ -54,12 +54,14 @@ angular.module('myApp')
         arcs.on("mouseover", function(d) {
                   
                   $referenceLabel.html(d.data.count + '-' + d.data.name );
+                  $('.genrelabel').hide();
                  //  d3.select(this).transition()
                  //     .duration(1000)
                  //     .attr("d", arcOver);
                  })
         .on("mouseout", function(d) {
-                  $referenceLabel.html('')
+                  $referenceLabel.html('');
+                  $('.genrelabel').show();
                   // d3.select(this).transition()
                   //    .duration(1000)
                   //    .attr("d", arc);

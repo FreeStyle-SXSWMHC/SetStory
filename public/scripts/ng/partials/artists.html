@@ -54,8 +54,9 @@
 	    			
     			</div>
     			
-    			<div class="genres-viz">
 
+    			<div class="genres-viz">
+    				<h3 ng-show="concert.media.length > 2"> Media</h3>
     				<div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
     				<div ng-repeat='m in media' >
     					<div ng-show="showImage(m)" >
@@ -72,6 +73,7 @@
     			
 
     				<div class="tracklist-container">
+    					<h3 ng-show="concert.tracks.length > 0"> SetList</h3>
     					<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
 
 	    				<h2>{{track.name}} 
@@ -80,7 +82,7 @@
     			    	</div>
     			    </div>
 
-
+    			    <h3 ng-show="concert.meta.genres.length > 0" class="genrelabel"> Genres</h3>
     			   <d3circles dataset="concert.meta.genres"> </d3circles>
 
     			</div>
