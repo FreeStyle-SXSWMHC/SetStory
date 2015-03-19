@@ -28,6 +28,9 @@
 		    				<div ng-show="showVideo(m)">
 		    					<video controls ng-src="{{showVideoUrl(m.url)}}">
 		    				</div>
+		    				<div ng-show="showEmbed(m)">
+		    					<iframe ng-src="{{showVideoUrl(m.url)}}">
+		    				</div>
 		    			</div>
 	    				
 	    			</div>

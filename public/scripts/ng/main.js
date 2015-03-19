@@ -49,8 +49,14 @@ myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routePara
 	  // $scope.loadMore();
 	$scope.showVideo = function(media){
 		if (!media) return false;
+		console.log(media.type);
 		return media.type ==='video';
 	};
+	$scope.showEmbed = function(media){
+		if (!media) return false;
+		console.log(media.type);
+		return media.type ==='embed';
+	}
 	$scope.showVideoUrl = function(url){
 		return $sce.trustAsResourceUrl(url);
 	}
