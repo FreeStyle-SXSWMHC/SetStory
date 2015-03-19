@@ -1,6 +1,11 @@
 body {
   padding: 50px;
+  background-image: url("../stylesheets/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%; 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white; 
 }
 
 a {
