@@ -47,9 +47,7 @@ var setlistFM = {
                 }
                 cb(output);
         }).on('error', function(data){
-            console.log(data);
             cb(data);
-
             return 0;
         })
     }
