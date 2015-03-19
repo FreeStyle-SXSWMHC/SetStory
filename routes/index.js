@@ -68,18 +68,21 @@ router.get('/api/genres/:artistName', function(req, res, next){
 
 router.get('/api/songInfo', function(req, res, next){
     decibel.getSongInfo(null,req.query.artist, function(data){
-        console.log('hi');
-        console.log(data);
         res.json(data);
     })
 });
 
 router.get('/api/gigs/:artistName', function(req, res, next){
     setlistFM.getArtistGigs(req.params.artistName, function(data){
-        console.log(data);
         res.json(data);
     })
 });
+
+router.get('/api/getSocialMedia', function(req, res, next){
+    openaura.getSocialFeed(req.query.artist,req.query.limit ,req.query.offset,function(data){
+        res.json(data);
+    })
+})
 
 
 module.exports = router;
