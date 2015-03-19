@@ -1,5 +1,18 @@
-var myApp = angular.module('myApp', ['autocomplete', 'infinite-scroll']);
-myApp.controller('SearchController', function($scope,$rootScope, $http){
+var myApp = angular.module('myApp', ['autocomplete', 'infinite-scroll','ngRoute']).
+config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/', 
+    {
+      templateUrl: '/scripts/ng/partials/search.html', 
+      controller: 'SearchController'
+    });
+  $routeProvider.when('/artists/:name', 
+    {
+      templateUrl: '/scripts/ng/partials/artists.html', 
+      controller: 'ArtistsController'
+    });
+}]);
+
+myApp.controller('SearchController', function($scope,$rootScope,$location, $http){
 
     $rootScope.main = true;
     $rootScope.detail = false;
@@ -16,30 +29,26 @@ myApp.controller('SearchController', function($scope,$rootScope, $http){
             
         };
         $scope.gotoArtist = function(c){	
-        	$rootScope.choice =c ; $scope.choice;
-        	$rootScope.main = false;
-        	$rootScope.detail = true;
+        	$location.path("/artists/" + c);
         };
     
 });
 
 
-myApp.controller('DemoController', function($scope,$rootScope, $http) {
+myApp.controller('ArtistsController', function($scope,$rootScope,$routeParams,$location, $http) {
+	$scope.choice = $routeParams.name;
 	$scope.back = function(){
-		console.log('h');
-		$rootScope.choice = '';
-        $rootScope.main = true;
-        $rootScope.detail = false;
+		$location.path("/");
 	}
-  // $scope.sets = [];
-  // $scope.page= 1;
-  // $scope.loadMore = function() {
-  //   var url = "/api/artist/skrillex/"+ $scope.page + "/" + 10;
-  //   $http.get(url).success(function(data) {
-  //   	$scope.sets.push(data.sets[0]);
-  //   	console.log(data.sets[0]);    	
-  //   	$scope.page++;
-  //   });
-  // };
-  // $scope.loadMore();
+	  $scope.sets = [];
+	  $scope.page= 1;
+	  // $scope.loadMore = function() {
+	   
+	  // };
+	  // $scope.loadMore();
+   	var url = "/api/gigs/"+ $scope.choice; 
+	$http.get(url).success(function(data) {
+		console.log(data);
+		$scope.sets= data;
+	});
 });
