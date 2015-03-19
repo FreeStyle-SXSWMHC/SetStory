@@ -7,20 +7,26 @@
 
 		<div class="buffer"></div>
 	</div>
-	<div class="artist-socialmedia-container">
-		<img ng-src="{{artistsPhoto}}"></div>
+	<div ng-show="artistsPhoto" class="artist-socialmedia-container">
+		<img ng-src="{{artistsPhoto}}" class="wow fadeIn"></div>
 </div>
 <div class="half-page  setstory-object">
 	<div>
     	<div>
-    		
-    		<div ng-repeat='concert in sets'> 
+    		<section id="cd-timeline">
+    		<div ng-repeat='concert in sets' class="concert-row"> 
+    			
     			<div class="wow fadeIn">
-	    			<h1>{{concert.location.city}}, {{concert.location.country}} | {{concert.eventDate}}</h1>
+    				<div class="circle-text"><div>
+    				<p>{{concert.eventDate | amDateFormat:'dddd'}}</p>
+    				<p>{{concert.eventDate | amDateFormat:'MMM DD'}}</p>
+    				<p>{{concert.eventDate | amDateFormat:'YYYY'}}</p>
+    				</div></div>
+	    			<h1>{{concert.location.city}}, {{concert.location.country}} </h1>
 	    			<h4> {{concert.minutes}} minutes  | {{concert.tracks.length}} tracks  | {{concert.bmp}} BPM  || {{concert.media.length}} media objects</h4>
 	    			<h3 ng-show="concert.tracks.length === 0"> No Sets for this concert :-(</h3>
     			</div>
-    			<div ng-repeat='media in concert.media' class="wow fadeIn">
+    			<div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
     				<div ng-repeat='m in media' >
     				
     					<div ng-show="showImage(m)">
@@ -42,6 +48,7 @@
     				</h2>
     			</div>
     		</div>
+    	</section>
     	</div>
 </div>
 </div>
