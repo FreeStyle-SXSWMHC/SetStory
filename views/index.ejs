@@ -43,6 +43,7 @@
 	</div>
 	<div class="setstory-object">
 		<div ng-app='myApp' ng-controller='DemoController'>
+<<<<<<< HEAD
 	    	<div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
 	    		<div ng-repeat='concert in sets'> 
 	    			<h1>{{concert.location}}</h1>
@@ -51,6 +52,22 @@
 	    			</div>
 	    		</div>
 	    	</div>
+=======
+	  <div infinite-scroll='loadMore()' infinite-scroll-distance='1'>
+	    <div ng-repeat='concert in sets'> 
+	    	<h1>{{concert.location}}</h1>
+	    <div ng-repeat='track in concert.tracks'>
+	    	<h2>{{track.name}} by <small>{{track.artist}}</small></h2>
+
+	    </div>
+
+	    
+	  </div>
+	</div>
+	
+
+
+>>>>>>> origin/master
 		</div>
     </div>	
 
