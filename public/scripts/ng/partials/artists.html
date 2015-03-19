@@ -7,6 +7,7 @@
 
 		<div class="buffer"></div>
 	</div>
+<<<<<<< Updated upstream
 	<div ng-show="artistsPhoto" class="artist-socialmedia-container">
 		<img ng-src="{{artistsPhoto}}" class="wow fadeIn"></div>
 </div>
@@ -24,6 +25,19 @@
     				</div></div>
 	    			<h1>{{concert.location.city}}, {{concert.location.country}} </h1>
 	    			<h4> {{concert.minutes}} minutes  | {{concert.tracks.length}} tracks  | {{concert.bmp}} BPM  || {{concert.media.length}} media objects</h4>
+=======
+	<div class="setstory-object">
+		<div>
+			
+		</div>
+
+		<!--<div>
+	    	<div>
+	    		
+	    		<div ng-repeat='concert in sets'> 
+	    			<h1>{{concert.location.city}}, {{concert.location.country}} | {{concert.eventDate}}</h1>
+	    			<h4> 300 minutes  | 12 tracks  | 120 BPM </h4>
+>>>>>>> Stashed changes
 	    			<h3 ng-show="concert.tracks.length === 0"> No Sets for this concert :-(</h3>
     			</div>
     			<div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
@@ -39,6 +53,7 @@
 	    					<iframe ng-src="{{showVideoUrl(m.url)}}">
 	    				</div> -->
 	    			</div>
+<<<<<<< Updated upstream
     				
     			</div>
     			<div ng-repeat='track in concert.tracks' class="wow fadeIn">
@@ -51,4 +66,12 @@
     	</section>
     	</div>
 </div>
+=======
+	    		</div>
+	    	</div>
+	    </div>
+	    -->
+	
+	</div>
+>>>>>>> Stashed changes
 </div>
