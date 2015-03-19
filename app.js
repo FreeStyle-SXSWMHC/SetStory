@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var routes = require('./routes/index');
+var openaura = require('./apiHandlers/openaura.js');
 
 var app = express();
 
