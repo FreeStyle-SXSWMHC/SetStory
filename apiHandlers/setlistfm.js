@@ -12,6 +12,7 @@ var setlistFM = {
             .on('complete', function(data){
                 // Build obj
                 var output = [];
+                try{
                 for (var i = 0 ; i < data.setlists.setlist.length ; i++){
                     var gig = {};
                     var tracks = [];
@@ -48,7 +49,12 @@ var setlistFM = {
                     }
                     
                 }
-                cb(output);
+
+            }
+            catch(e){
+
+            }
+            cb(output);
         }).on('error', function(data){
             cb(data);
             return 0;
