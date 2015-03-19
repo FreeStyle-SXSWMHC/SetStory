@@ -25,5 +25,3 @@ musicgraph.getArtistInfo = function(artist,cb){
 };
 
 module.exports = musicgraph;
-
-musicgraph.getArtistInfo('Coldplay', function(data){})
