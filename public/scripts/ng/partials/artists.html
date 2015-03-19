@@ -28,12 +28,29 @@
     				<p>{{concert.eventDate | amDateFormat:'YYYY'}}</p>
     				</div></div>
 	    			<h1>{{concert.location.city}}, {{concert.location.country}} </h1>
-	    			<h4> {{concert.minutes}} minutes  | {{concert.tracks.length}} tracks  | {{concert.meta.bpm_average}} BPM  || {{concert.media.length}} media objects</h4>
-	    			<h3 ng-show="concert.tracks.length === 0"> No Sets for this concert :-(</h3>
+	    			<div class="insights">
+		    			<div class="insight-box">
+		    				<h2>{{concert.meta.duration|| "-"}} </h2>
+		    				<h3> minutes </h3>
+		    			</div>
+		    			<div class="insight-box">
+		    				<h2>{{concert.meta.bpm_average || "-"}} </h2>
+		    				<h3> bpm </h3>
+		    			</div>
+		    			<div class="insight-box">
+		    				<h2>{{concert.tracks.length || "-"}} </h2>
+		    				<h3> tracks </h3>
+		    			</div>
+		    			<div class="insight-box">
+		    				<h2>{{concert.media.length || "-"}} </h2>
+		    				<h3> media </h3>
+		    			</div>
+		    			
+	    			</div>
+	    			
     			</div>
     			<div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
     				<div ng-repeat='m in media' >
-    				
     					<div ng-show="showImage(m)">
 	    					<img ng-src="{{m.url}}">
 	    				</div>
@@ -45,8 +62,10 @@
 	    				</div> -->
 	    			</div>	
     			</div>
-    			<div ng-repeat='genre in concert.meta.genres'>
-    				<h3>{{genre.name}} <strong> {{genre.count}} </strong> </h3>
+    			<div class="genres-viz">
+	    			<div ng-repeat='genre in concert.meta.genres'>
+	    				<h3 ng-class="'genre-' + genre.count">{{genre.name}} <strong> {{genre.count}} </strong> </h3>
+	    			</div>
     			</div>
     			<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
 

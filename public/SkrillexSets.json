@@ -1,6 +1,7 @@
 [
    {
       "bpm_average":94.51,
+      "duration":183,
       "genres":[
          {
             "name":"alternative/indie",
@@ -38,6 +39,7 @@
    },
    {
       "bpm_average":64.35,
+      "duration":101.2,
       "genres":[
          {
             "name":"alternative/indie",
@@ -67,6 +69,7 @@
    },
    {
       "bpm_average":77.95,
+      "duration":90,
       "genres":[
          {
             "name":"alternative/indie",

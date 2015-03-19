@@ -35,7 +35,7 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
 });
 
 
-myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routeParams,$location, $http) {
+myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
 	
 	$scope.choice = $routeParams.name;
 	
@@ -91,7 +91,7 @@ myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routePara
 		
 		if (media.type === 'image')
 		{
-			if (parseInt(media.width) >= 700 && parseInt(media.width) <= 800){
+			if (parseInt(media.width) >= 620 && parseInt(media.width) <= 800){
 				return true;
 			}
 			else return false;
@@ -101,12 +101,24 @@ myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routePara
 	};
 	var url = "/api/story/"+ $scope.choice; 
 	
+	var svg = d3.select("svg");
+
+	var circle = svg.selectAll("circle")
+	    .data([32, 57, 112, 293]);
+
+	var circleEnter = circle.enter().append("circle");
+
 	$http.get(url).success(function(data) {
+		
+		
 		$scope.sets= data;
 		var mockDatasetUrl = '/SkrillexSets.json';
 		$http.get(mockDatasetUrl).success(function(metadata) {
+
+
 			for (var i = 0; i < metadata.length; i++) {
-				data[i].meta = metadata[i]
+				metadata[i].genres = $filter('orderBy')(metadata[i].genres, '-count');
+				data[i].meta = metadata[i];
 			};
 		});
 	});
