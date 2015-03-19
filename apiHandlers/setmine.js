@@ -10,8 +10,6 @@ setmine.init = function(callback) {
 
     rest.get('http://setmine.com/api/t/artists', {
         query : {}}).on('complete', function(data) {
-        	console.log(typeof data)
-        	console.log(typeof data.artists)
         	for(var i in data.artists) {
         		setmine.artists.push(data.artists[i])
         	}
