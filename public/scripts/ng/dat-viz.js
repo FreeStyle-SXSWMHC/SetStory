@@ -53,7 +53,7 @@ angular.module('myApp')
               var $referenceLabel = $(element.context).find('h3.reference');
         arcs.on("mouseover", function(d) {
                   
-                  $referenceLabel.html(d.data.count + '-' + d.data.name );
+                  $referenceLabel.html(d.data.name + '(' + d.data.count  +')');
                   $('.genrelabel').hide();
                  //  d3.select(this).transition()
                  //     .duration(1000)
@@ -61,12 +61,26 @@ angular.module('myApp')
                  })
         .on("mouseout", function(d) {
                   $referenceLabel.html('');
-                  $('.genrelabel').show();
                   // d3.select(this).transition()
                   //    .duration(1000)
                   //    .attr("d", arc);
                  });
         $(element.context).find('svg')[0].remove()
+        
+
+// add the text
+var count = 0;
+for (var i = 0; i < dataset.length; i++) {
+  count += dataset[i].count;
+};
+arcs.append("svg:text").attr("transform", function(d){
+      d.innerRadius = 0;
+      d.outerRadius = r;
+    return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
+    return Math.round(data[i].count * 100 / count) + "%" ;}
+    );
+
+
         arcs.append("svg:text")                                     //add a label to each slice
                 .attr("transform", function(d) {                    //set the label's origin to the center of the arc
                 //we have to make sure to set these before calling arc.centroid
@@ -78,6 +92,7 @@ angular.module('myApp')
             .text(function(d, i) { return data[i].label; });        //get the label from our original data array
 
           });
+      
   
     }
   }
