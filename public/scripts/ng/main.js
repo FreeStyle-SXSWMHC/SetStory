@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['autocomplete', 'infinite-scroll','ngRoute']).
+var myApp = angular.module('myApp', ['autocomplete', 'infinite-scroll','angularMoment','ngRoute']).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', 
     {
@@ -22,7 +22,7 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
         $scope.updateArtists = function(typed){
             // MovieRetriever could be some service returning a promise
             var url = '/api/search/' + typed;
-            console.log(typed);
+            
             $http.get(url).success(function(data) {
 		    	$scope.artists = data;
 		    });
@@ -40,15 +40,25 @@ myApp.controller('ArtistsController', function($scope,$rootScope,$routeParams,$l
 	$scope.back = function(){
 		$location.path("/");
 	}
+	var media =[];
 	  $scope.sets = [];
 	  $scope.page= 1;
 	  // $scope.loadMore = function() {
 	   
 	  // };
 	  // $scope.loadMore();
+	$scope.isVideo = function(media){
+		if (!media) return false;
+
+		console.log('t',media.type);
+		return media.type !== 'image';
+	};
    	var url = "/api/gigs/"+ $scope.choice; 
+
 	$http.get(url).success(function(data) {
-		console.log(data);
+		
+		
+
 		$scope.sets= data;
 	});
 });
