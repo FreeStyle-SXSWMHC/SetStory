@@ -51,6 +51,17 @@ myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routePara
 	}
 	$scope.getArtistPhoto();
 
+    $scope.getArtistData = function(){
+        var url = "api/artist/" + $scope.choice;
+
+        $http.get(url).success(function(data) {
+            $scope.artistData = data;
+            console.log('artist data', data);
+        })
+
+    }
+
+    $scope.getArtistData();
 
 	$scope.back = function(){
 		$location.path("/");
@@ -93,5 +104,6 @@ myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routePara
 	$http.get(url).success(function(data) {
 		$scope.sets= data;
 	});
-   	
+
+
 });
