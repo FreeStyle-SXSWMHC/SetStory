@@ -63,9 +63,7 @@
 	    			</div>	
     			</div>
     			<div class="genres-viz">
-	    			<div ng-repeat='genre in concert.meta.genres'>
-	    				<h3 ng-class="'genre-' + genre.count">{{genre.name}} <strong> {{genre.count}} </strong> </h3>
-	    			</div>
+    				<d3circles dataset="concert.meta.genres"> </d3circles>
     			</div>
     			<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
 
