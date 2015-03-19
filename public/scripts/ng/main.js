@@ -15,8 +15,8 @@ myApp.controller('SearchController', function($scope,$rootScope, $http){
 		    });
             
         };
-        $scope.gotoArtist = function(){
-        	$rootScope.choice = $scope.choice;
+        $scope.gotoArtist = function(c){	
+        	$rootScope.choice =c ; $scope.choice;
         	$rootScope.main = false;
         	$rootScope.detail = true;
         };
@@ -24,7 +24,13 @@ myApp.controller('SearchController', function($scope,$rootScope, $http){
 });
 
 
-myApp.controller('DemoController', function($scope, $http) {
+myApp.controller('DemoController', function($scope,$rootScope, $http) {
+	$scope.back = function(){
+		console.log('h');
+		$rootScope.choice = '';
+        $rootScope.main = true;
+        $rootScope.detail = false;
+	}
   // $scope.sets = [];
   // $scope.page= 1;
   // $scope.loadMore = function() {
