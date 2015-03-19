@@ -92,6 +92,14 @@ myApp.controller('ArtistsController', function($scope,$sce,$rootScope,$routePara
 	
 	$http.get(url).success(function(data) {
 		$scope.sets= data;
+		var mockDatasetUrl = '/SkrillexSets.json';
+		$http.get(mockDatasetUrl).success(function(metadata) {
+			for (var i = 0; i < metadata.length; i++) {
+				data[i].meta = metadata[i]
+			};
+		});
 	});
+
+
    	
 });

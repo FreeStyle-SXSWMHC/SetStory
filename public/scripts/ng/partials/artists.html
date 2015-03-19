@@ -23,7 +23,7 @@
     				<p>{{concert.eventDate | amDateFormat:'YYYY'}}</p>
     				</div></div>
 	    			<h1>{{concert.location.city}}, {{concert.location.country}} </h1>
-	    			<h4> {{concert.minutes}} minutes  | {{concert.tracks.length}} tracks  | {{concert.bmp}} BPM  || {{concert.media.length}} media objects</h4>
+	    			<h4> {{concert.minutes}} minutes  | {{concert.tracks.length}} tracks  | {{concert.meta.bpm_average}} BPM  || {{concert.media.length}} media objects</h4>
 	    			<h3 ng-show="concert.tracks.length === 0"> No Sets for this concert :-(</h3>
     			</div>
     			<div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
@@ -38,8 +38,10 @@
 	    				<div ng-show="showEmbed(m)">
 	    					<iframe ng-src="{{showVideoUrl(m.url)}}">
 	    				</div> -->
-	    			</div>
-    				
+	    			</div>	
+    			</div>
+    			<div ng-repeat='genre in concert.meta.genres'>
+    				<h3>{{genre.name}} <strong> {{genre.count}} </strong> </h3>
     			</div>
     			<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
 
