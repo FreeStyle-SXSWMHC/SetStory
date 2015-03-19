@@ -1,69 +1,93 @@
 [
-  {"bpm_average" : 94.51, "genres" :
-  [
-    { "name" : "alternative/indie", "count" : 6},
-    {  "name" : "rap/hip hop", "count" : 6},
-
-    { "name" : "jazz", "count" :  2},
-    {"name" : "rock", "count" : 4},
-    {"name" : "electronica/dance", "count" :  6},
-    {"name" : "reggae/ska", "count" : 1},
-    {"name" : "pop", "count" : 2},
-    {"name" : "classical/opera", "count" :  1}
-  ]
-  },
-  {
-    "bpm_average": 64.35,
-    "genres": [
-      {
-        "name": "alternative/indie",
-        "count": 2
-      },
-      {
-        "name": "rap/hip hop",
-        "count": 7
-      },
-      {
-        "name": "jazz",
-        "count": 2
-      },
-      {
-        "name": "rock",
-        "count": 2
-      },
-      {
-        "name": "world",
-        "count": 1
-      },
-      {
-        "name": "classical/opera",
-        "count": 1
-      }
-    ]
-  },
-  {
-    "bpm_average": 77.95,
-    "genres": [
-      {
-        "name": "alternative/indie",
-        "count": 3
-      },
-      {
-        "name": "rap/hip hop",
-        "count": 10
-      },
-      {
-        "name": "jazz",
-        "count": 1
-      },
-      {
-        "name": "rock",
-        "count": 1
-      },
-      {
-        "name": "world",
-        "count": 3
-      }
-    ]
-  }
+   {
+      "bpm_average":94.51,
+      "genres":[
+         {
+            "name":"alternative/indie",
+            "count":6
+         },
+         {
+            "name":"rap/hip hop",
+            "count":6
+         },
+         {
+            "name":"jazz",
+            "count":2
+         },
+         {
+            "name":"rock",
+            "count":4
+         },
+         {
+            "name":"electronica/dance",
+            "count":6
+         },
+         {
+            "name":"reggae/ska",
+            "count":1
+         },
+         {
+            "name":"pop",
+            "count":2
+         },
+         {
+            "name":"classical/opera",
+            "count":1
+         }
+      ]
+   },
+   {
+      "bpm_average":64.35,
+      "genres":[
+         {
+            "name":"alternative/indie",
+            "count":2
+         },
+         {
+            "name":"rap/hip hop",
+            "count":7
+         },
+         {
+            "name":"jazz",
+            "count":2
+         },
+         {
+            "name":"rock",
+            "count":2
+         },
+         {
+            "name":"world",
+            "count":1
+         },
+         {
+            "name":"classical/opera",
+            "count":1
+         }
+      ]
+   },
+   {
+      "bpm_average":77.95,
+      "genres":[
+         {
+            "name":"alternative/indie",
+            "count":3
+         },
+         {
+            "name":"rap/hip hop",
+            "count":10
+         },
+         {
+            "name":"jazz",
+            "count":1
+         },
+         {
+            "name":"rock",
+            "count":1
+         },
+         {
+            "name":"world",
+            "count":3
+         }
+      ]
+   }
 ]
