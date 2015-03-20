@@ -8,6 +8,8 @@ var unified = require('../apiHandlers/unified');
 var musicgraph = require('../apiHandlers/musicgraph');
 var setmine = require('../apiHandlers/setmine')
 
+var jf = require('jsonfile')
+
 setmine.init(function() {
 })
 
@@ -18,7 +20,11 @@ router.get('/', function(req, res, next) {
 
 router.get('/api/search/:name', function(req, res, next) {
 
-    //TODO: Make it dynamic
+    if(req.params.name == "Ultra Music Festival 2015") {
+        jf.readFile('../data/umf2015.json', function(err, obj) {
+            res.json(obj.event)
+        })
+    }
 
     var result = [];
 
@@ -34,6 +40,7 @@ router.get('/api/search/:name', function(req, res, next) {
 
 
 });
+
 router.get('/api/artist/:artistName/:page/:count', function(req, res, next){
     // TODO: Make dynamic
     if (parseInt(req.params.page) > 5){
@@ -63,7 +70,7 @@ router.get('/api/genres/:artistName', function(req, res, next){
         decibel.getArtistGenres(req.params.artistName, function(data){
             res.json(data);
         });
-    }catch(e){
+    } catch(e){
         console.log(e);
 
     }
@@ -89,6 +96,12 @@ router.get('/api/getSocialMedia', function(req, res, next){
 
 router.get('/api/story/:artistName', function(req, res, next){
     unified.story(req.params.artistName, function(data){
+        res.json(data);
+    })
+})
+
+router.get('/api/popularity/:artist/:event', function(req, res, next){
+    setmine.popularity(req.params.artist, req.params.event, function(data) {
         res.json(data);
     })
 })
