@@ -32,7 +32,7 @@
 			<div class="lineup-title wow rubberBand animated centered">Lineup</div>
 			<div class="artist-row" ng-repeat="artist in detail.lineup">
 				<div class="artist-lineup-container wow rollIn animated">
-					<div class="artist-lineup"><img src="" ng-src="{{artist.artistimageURL}}"/>
+					<div ng-click="gotoArtist(artist)" class="hand artist-lineup"><img src="" ng-src="{{artist.artistimageURL}}"/>
 					</div>
 					<div class="centered">
 						<a href="" ng-click="gotoArtist(artist)">{{artist.artist | limitTo:20}}</a>
