@@ -33,8 +33,8 @@ angular.module('myApp')
 
               // Define the line
               var valueline = d3.svg.line()
-                .x(function(d) { console.log(d.year); return x(d.year); })
-                .y(function(d) { console.log(d.tickets);return y(d.tickets); });
+                .x(function(d) { return x(d.year); })
+                .y(function(d) { return y(d.tickets); });
 
               // Adds the svg canvas
               var svg = d3.select(".progress-graph")
@@ -48,7 +48,7 @@ angular.module('myApp')
               // Get the data
               d3.csv("tickets-year-cochela.csv", function(error, data) {
               data.forEach(function(d) {
-                  console.log(d);
+                  
                   d.year = parseInt(d.years);
                   d.tickets = parseInt(d.tickets);
               });
