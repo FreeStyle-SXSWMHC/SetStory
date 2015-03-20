@@ -1,6 +1,6 @@
 var duration   = 1000,
     transition = 300;
-    
+
 angular.module('myApp')
   .directive('d3percentage', function() {
   return {
@@ -16,7 +16,7 @@ angular.module('myApp')
     link: function(scope, element, attrs) {
 scope.$watch('dataset', function(dataset) {
   
-    $(element.context).addClass('percentage-'+dataset);
+    $(element).addClass('percentage-'+dataset);
   drawDonutChart(
     '.percentage-'+dataset,
     dataset,
