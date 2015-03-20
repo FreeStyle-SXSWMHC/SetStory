@@ -1,0 +1,24 @@
+[
+{ artist_name: 'AB-Soul', popularity: 0.636759 },
+{ artist_name: 'Alabama Shakes', popularity: 0.780844 },
+{ artist_name: 'Alesso', popularity: 0.934104 },
+{ artist_name: 'Alison Wonderland', popularity: 0.761568 },
+{ artist_name: 'Action Bronson', popularity: 0.734878 },
+{ artist_name: 'Allah-Las', popularity: 0.604784 },
+{ artist_name: 'Andrew McMahon in the Wilderness',
+  popularity: 0.706831 },
+  { artist_name: 'Alvin Risk', popularity: 0.577706 },
+  { artist_name: 'Alt-J', popularity: 0.863239 },
+  { artist_name: 'Andrea Oliva', popularity: 0.508732 },
+  { artist_name: 'Angel Olsen', popularity: 0.610867 },
+  { artist_name: 'Antemasque', popularity: 0.521283 },
+  { artist_name: 'Annie Mac', popularity: 0.496291 },
+  { artist_name: 'Angus & Julia Stone', popularity: 0.786999 },
+  { artist_name: 'Axwell Î Ingrosso', popularity: 0 },
+  { artist_name: 'Azealia Banks', popularity: 0.635171 },
+  { artist_name: 'Bad Religion', popularity: 0.612782 },
+  { artist_name: 'Bad Suns', popularity: 0.620904 },
+  { artist_name: 'Belle and Sebastian', popularity: 0.789423 },
+  { artist_name: 'Ben Klock', popularity: 0.590853 }
+
+]
