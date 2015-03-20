@@ -61,12 +61,6 @@ router.get('/api/getArtistPic/:artistName', function(req, res, next){
     })
 })
 
-// router.get('/api/getArtistPic/:artistName', function(req, res, next){
-//     openaura.getArtistImage(req.params.artistName, function(data){
-//         res.json(data);
-//     })
-// })
-
 
 router.get('/api/genres/:artistName', function(req, res, next){
     try{
