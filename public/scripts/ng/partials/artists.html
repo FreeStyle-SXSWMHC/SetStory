@@ -1,6 +1,14 @@
 
 <div class="half-page artist-container">
-	<a ng-click="back()" href=""><h1> Back </h1></a>
+	<div class="header">
+		<div class="half">
+			<a ng-click="back()" href=""><h1> Back </h1></a>
+		</div>
+		<div class="half">
+			<h1 class="score"> {{artistScore}}</h1>
+		</div>
+	<div>
+	
 	<div class="artist-title-container">
 		<div class="artist-title wow fadeIn">{{choice}}:</div>
 		 <div class="concert-title">{{sets.length}} concerts</div>  
@@ -10,12 +18,13 @@
 	<div ng-show="artistsPhoto" class="artist-socialmedia-container">
 		<img ng-src="{{artistsPhoto}}" class="wow fadeIn"></div>
 	<div class="artist-info-container">
-		<div class="buffer"></div>	
+		
 		<div class="artist-general-info">
+	        
 	        <p>Country: {{artistData.country_of_origin}}</p>
 	        <p>Genre: {{artistData.main_genre}}</p>
 	        <p>Decade: {{artistData.decade}}</p>
-	        <p>Score: {{artistScore}}</p>
+	        
   		</div>
 	</div>
  
@@ -55,7 +64,7 @@
     			</div>
     			
 
-    			<div class="genres-viz flex-row">
+    			<div class="genres-viz wow fadeIn flex-row">
     				<div class="media-container flex-column">
 	    				<h3 ng-show="concert.media.length > 0"> Media</h3>
 	    				<div ng-repeat='media in concert.media' class="wow fadeIn concert-image-container">
@@ -72,7 +81,7 @@
 			    			</div>
 	    			  	</div>
     				</div>
-    			  	<div class="setlist-container flex-column">
+    			  	<div class="setlist-container flex-column wow fadeIn">
     			  		<h3 ng-show="concert.tracks.length > 0"> SetList</h3>
 	    				<div class="tracklist-container">
 	    					<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
@@ -82,7 +91,7 @@
 	    			    	</div>
 	    			  	</div>
     			  	</div>
-					<div class="d3circles-container">
+					<div class="d3circles-container wow fadeIn">
 						<h3 ng-show="concert.meta.genres.length > 0" class="genrelabel"> Genres</h3>
 						<d3circles dataset="concert.meta.genres"></d3circles>
 					</div>

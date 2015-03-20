@@ -26,28 +26,30 @@ echonest.getArtistPopularity = function(artist, cb){
         }
     }).on('complete', function(data){
         // Use matching artist's id to get popularity
-        if (!data){
+        if (!data.response.artists[0]){
             cb(0);
             return 1;
         }
-        var artist_id = data.response.artists[0].id;
-        rest.get('http://developer.echonest.com/api/v4/artist/hotttnesss', {
-            query: {
-                "api_key" : api_key,
-                "id" : artist_id
-            }
-        }).on('complete', function(artist_data){
-            if(!artist_data) {
-                cb(0);
-                return 1;
-            }
-            var popularity = artist_data.response.artist.hotttnesss;
-            cb({
-                "artist_name":artist,
-                "popularity":popularity
-            })
-            return 0;
+        else {
+            var artist_id = data.response.artists[0].id;
+            rest.get('http://developer.echonest.com/api/v4/artist/hotttnesss', {
+                query: {
+                    "api_key" : api_key,
+                    "id" : artist_id
+                }
+            }).on('complete', function(artist_data){
+                if(!artist_data) {
+                    cb(0);
+                    return 1;
+                }
+                var popularity = artist_data.response.artist.hotttnesss;
+                cb({
+                    "artist_name":artist,
+                    "popularity":popularity
+                })
+                return 0;
         });
+        }
     })
 }
 
