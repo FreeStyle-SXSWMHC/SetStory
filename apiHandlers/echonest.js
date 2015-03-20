@@ -9,7 +9,7 @@ echonest.getTrackPopularity = function(trackTitle, cb){
             'title' : trackTitle,
             'format' : 'json',
             'api_key': api_key,
-            'bucket': 'song_hotttnesss, song_hotttnesss_rank'
+            'bucket': 'song_hotttnesss',
         }
     }).on('complete', function(data){
         console.log(data)
