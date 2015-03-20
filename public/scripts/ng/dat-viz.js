@@ -54,7 +54,7 @@ angular.module('myApp')
         arcs.on("mouseover", function(d) {
                   
                   $referenceLabel.html(d.data.name + '(' + d.data.count  +')');
-                  $('.genrelabel').hide();
+                  // $('.genrelabel').hide();
                  //  d3.select(this).transition()
                  //     .duration(1000)
                  //     .attr("d", arcOver);
