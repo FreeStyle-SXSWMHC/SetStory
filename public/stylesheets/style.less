@@ -82,7 +82,7 @@ a {
   margin: auto;
 }
 .artist-row{
-
+  display: inline-block;
 }
 .artist-lineup-text {
   .flex(); 
@@ -139,7 +139,10 @@ a {
 }
 
 .concert-image-container {
-  .flex(1,1,0)
+  .flex(1,1,0);
+  height:25vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .d3circles-container {
@@ -264,6 +267,7 @@ a {
   overflow-x:hidden; 
   border: solid 1px;
   text-align: center;
+  background-color: lightgray;
 }
 
 
@@ -309,14 +313,17 @@ h3 {
 .genres-viz svg:first {
     display:none;
 }
-
+.white{
+    background:white;
+    }
 .lineup-container {
 //   .flex(0); 
 //   .flexContainer(column, vertical); 
-  width: 100%;
+    width: 100%;
   background-color: rgba(228,241,254,0.8);
-  padding-top: 21em;
+//   padding-top: 21em;
   padding-left: 3em;
+  display: table;
 }
 
 #lineup-page {
@@ -340,10 +347,18 @@ h3 {
   background-color:white; 
   .flexContainer(column, vertical); 
 }
+.data-container{
+    display:inline-flex;
+    }
 .summary-data-body {
   .flex(); 
   .flexContainer(); 
   padding: 1vh 3vw;
+  background:white;
+}
+
+.hand{
+	cursor: pointer;
 }
 .summary-title {
   .flex(0);
