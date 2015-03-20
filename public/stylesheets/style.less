@@ -2,11 +2,16 @@
 @import "variablesSS.less";
 
 /* CSS */ 
-
+html {
+  max-width: 100vw;
+  font-family: 'Nunito', sans-serif;
+}
 body {
   margin:0; 
   font-family: 'Nunito', sans-serif;
   background-color:#ECECEC;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 p{
   margin: 0;
@@ -40,7 +45,7 @@ a {
   .flexContainer(); 
 }
 
-artist-general-info {
+.artist-general-info {
   text-align:right; 
   .flex(); 
   margin-right:1vw; 
@@ -197,6 +202,7 @@ width: 50%;
     margin-bottom: 2em;
     padding-left: 9em;
     background-color:#ECECEC;
+    .flex();
 }
 #cd-timeline::before {
   content: '';
