@@ -85,13 +85,13 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 
     $scope.getArtistScore = function() {
     	var url = '/coachellaPopularity.json';
-    	console.log("fuck");
 
     	$http.get(url).success(function(metadata) {
     		$scope.artistScore = " - ";
     		for(var i in metadata) {
     			if(metadata[i].artist_name == $scope.choice) {
-    				$scope.artistScore = Math.floor(metadata[i].popularity*1000);
+    				var score = Math.floor(metadata[i].popularity*10000);
+    				$scope.artistScore = score;
     			}
     		}
     	});
