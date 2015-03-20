@@ -15,6 +15,11 @@ setmine.init = function(callback) {
     	for(var i in data.artists) {
     		setmine.artists.push(data.artists[i])
     	}
+        //TODO: Hard fix for events
+        setmine.artists.push({artist:'Coachella 2015'});
+        setmine.artists.push({artist:'Lollapalooza 2015'});
+        setmine.artists.push({artist:'Ultra Music Festival 2015'});
+        setmine.artists.push({artist:'SXSW 2015'});
         if(callback) {
         	callback()
         }
