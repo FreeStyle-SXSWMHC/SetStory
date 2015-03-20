@@ -138,10 +138,7 @@ myApp.controller('FestivalController', function($scope,$sce,$filter, $rootScope,
 
 	
 
-<<<<<<< Updated upstream
 });
-=======
->>>>>>> Stashed changes
 
 
 

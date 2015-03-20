@@ -106,4 +106,10 @@ router.get('/api/popularity/:artist/:event', function(req, res, next){
     })
 })
 
+router.get('/api/popularity/:trackTitle', function(req, res, next){
+    echonest.getTrackPopularity(req.params.trackTitle, function(data) {
+        res.json(data);
+    })
+})
+
 module.exports = router;
