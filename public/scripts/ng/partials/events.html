@@ -1,12 +1,14 @@
 <div class="page" id="lineup-page">
-		<div class="summary-container wow fadeIn ">
+		<div class=" wow fadeIn ">
 			<div class="summary-title">
 				{{detail.event}}
 			</div>
 					
 			<div class="summary-data-body">
 				<div class="data-container">
-					<div class="data-title">Attendance</div>
+					<div class="data-title">Attendance & Sold Tickets</div>
+					<d3percentage> </d3percentage>
+					<div class="data-title"></div>
 					<d3percentage> </d3percentage>
 				</div>
 				<div class="buffer"></div>
@@ -15,25 +17,23 @@
 					<d3progress> </d3progress>
 				</div>
 				<div class="buffer"></div>
-				<div class="data-container">
-					<div class="data-title">Sold Tickets</div>
-					<d3percentage> </d3percentage>
-
-			</div>
+				
 			</div>
 
 		</div>
 
-		<div class="lineup-title wow rubberBand animated centered">Lineup</div>
+		
 
 		<div class="lineup-container">
-
-			
+			<div class="lineup-title wow rubberBand animated centered">Lineup</div>
 			<div class="artist-row" ng-repeat="artist in detail.lineup">
 				<div class="artist-lineup-container wow rollIn animated">
-					<div class="artist-lineup"><img src="" ng-src="{{artist.artistimageURL}}"</div>
+					<div class="artist-lineup"><img src="" ng-src="{{artist.artistimageURL}}"/>
+					</div>
+					<div class="centered">
+						<a href="" ng-click="gotoArtist(artist)">{{artist.artist | limitTo:20}}</a>
+					</div>
 				</div>
-				<a href="" ng-click="gotoArtist(artist)">{{artist.artist}}</a></div>
 				<div class="buffer"></div>
 			</div>
 				
