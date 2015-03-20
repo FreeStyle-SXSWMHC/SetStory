@@ -22,6 +22,44 @@
 
 </head>
 <body ng-app="myApp">
+	<div class="page" id="lineup-page">
+		<div class="summary-container">
+				Summary Data Goes Here
+		</div>
+
+		<div class="lineup-title wow rubberBand animated">Lineup:</div>
+
+		<div class="lineup-container">
+
+			<div class="artist-image-row">
+				<div class="artist-lineup-container wow rollIn animated">
+				</div>
+				<div class="buffer"></div>
+				<div class="artist-lineup-container wow rollIn animated">
+				</div>
+				<div class="buffer"></div>
+				<div class="artist-lineup-container wow rollIn animated">
+				</div>
+				<div class="buffer"></div>
+				<div class="artist-lineup-container wow rollIn animated">
+				</div>
+			</div>
+
+			<div class="artist-text-row">
+				<div class="artist-lineup-text wow bounce animated">Artist</div>
+				<div class="buffer"></div>
+				<div class="artist-lineup-text wow bounce animated">Artist</div>
+				<div class="buffer"></div>
+				<div class="artist-lineup-text wow bounce animated">Artist</div>
+				<div class="buffer"></div>
+				<div class="artist-lineup-text wow bounce animated">Artist</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
 	<div ng-view></div>
     <script src="/scripts/services.js"></script>
     <script src="/scripts/app.js"></script>

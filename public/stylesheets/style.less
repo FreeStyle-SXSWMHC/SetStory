@@ -46,6 +46,33 @@ artist-general-info {
   margin-right:1vw; 
 }
 
+.artist-image-row {
+  .flex(); 
+  .flexContainer(); 
+  padding: 0vh 3vw; 
+}
+
+.artist-lineup-container {
+  .flex(2);
+  height: 35.5vh;
+  background-color: rgba(46,204,116,1);
+  border-radius: 200px; 
+  border: 3px solid #00b16a;
+}
+
+.artist-lineup-text {
+  .flex(); 
+  font-size:2.5em; 
+}
+
+.artist-text-row {
+  .flexContainer(); 
+  .flex(); 
+  text-align:center; 
+  color:black;
+  padding: 0vh 3vw; 
+}
+
 .artist-title-container {
  .flexContainer();   
 }
@@ -238,5 +265,27 @@ h3 {
 
 .genres-viz svg:first {
     display:none;
+}
+
+.lineup-container {
+  .flex(0); 
+  .flexContainer(column, vertical); 
+}
+
+#lineup-page {
+  background-color:white; 
+}
+
+.lineup-title {
+  .flex(0); 
+  font-size:3em; 
+  font-decoration:underline; 
+  color:black; 
+  padding: 1vh 3vw 2vh 3vw;
+  text-align: left;
+  text-decoration: underline; 
+}
+.summary-container {
+  .flex(); 
 }
     

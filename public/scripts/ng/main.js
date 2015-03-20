@@ -117,5 +117,9 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 
 });
 
+$( "#test" ).hover(function() {
+    $("#test").addClass( "flipInY" );
+});
+
 
 
