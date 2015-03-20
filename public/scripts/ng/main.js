@@ -135,4 +135,5 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 });
 myApp.controller('EventsController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
 
+
 });

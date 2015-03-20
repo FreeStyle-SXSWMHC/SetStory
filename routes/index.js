@@ -100,4 +100,10 @@ router.get('/api/story/:artistName', function(req, res, next){
     })
 })
 
+router.get('/api/popularity/:artist/:event', function(req, res, next){
+    setmine.popularity(req.params.artist, req.params.event, function(data) {
+        res.json(data);
+    })
+})
+
 module.exports = router;
