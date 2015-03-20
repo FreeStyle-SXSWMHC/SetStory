@@ -10,6 +10,11 @@ config(['$routeProvider', function($routeProvider) {
       templateUrl: '/scripts/ng/partials/artists.html', 
       controller: 'ArtistsController'
     });
+   $routeProvider.when('/events/:name', 
+    {
+      templateUrl: '/scripts/ng/partials/events.html', 
+      controller: 'EventsController'
+    });
 }]);
 
 myApp.controller('SearchController', function($scope,$rootScope,$location, $http){
@@ -129,3 +134,5 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 
 
 
+myApp.controller('EventsController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
+});
