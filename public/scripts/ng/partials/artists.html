@@ -20,7 +20,7 @@
 	</div>
  
 </div>
-<div class="half-page  setstory-object">
+<div class="half-page setstory-object">
 	<div>
     	<div>
     		<section id="cd-timeline">
@@ -56,25 +56,27 @@
     			
 
     			<div class="genres-viz flex-row">
-    				<h3 ng-show="concert.media.length > 2"> Media</h3>
-    				<div ng-repeat='media in concert.media' class="wow fadeIn concert-image-container">
-	    				<div ng-repeat='m in media' >
-	    					<div ng-show="showImage(m)" >
-		    					<img ng-src="{{m.url}}" style = "width:16vw;height:25vh">
-		    				</div>
-		    				<!-- <div ng-show="showVideo(m)">
-		    					<video controls ng-src="{{showVideoUrl(m.url)}}">
-		    				</div>
-		    				<div ng-show="showEmbed(m)">
-		    					<iframe ng-src="{{showVideoUrl(m.url)}}">
-		    				</div> -->
-		    			</div>
-    			  	</div>
+    				<div class="media-container flex-column">
+	    				<h3 ng-show="concert.media.length > 0"> Media</h3>
+	    				<div ng-repeat='media in concert.media' class="wow fadeIn concert-image-container">
+		    				<div ng-repeat='m in media' >
+		    					<div ng-show="showImage(m)" >
+			    					<img ng-src="{{m.url}}" style = "width:16vw;height:25vh">
+			    				</div>
+			    				<!-- <div ng-show="showVideo(m)">
+			    					<video controls ng-src="{{showVideoUrl(m.url)}}">
+			    				</div>
+			    				<div ng-show="showEmbed(m)">
+			    					<iframe ng-src="{{showVideoUrl(m.url)}}">
+			    				</div> -->
+			    			</div>
+	    			  	</div>
+    				</div>
     			  	<div class="setlist-container flex-column">
     			  		<h3 ng-show="concert.tracks.length > 0"> SetList</h3>
 	    				<div class="tracklist-container">
 	    					<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
-			    				<h2 style="margin:0">{{track.name}} 
+			    				<h2 class="track-name" style="margin:0">{{track.name}} 
 		    						<span ng-show="track.originalArtist">- <small>{{track.originalArtist}}</small></span>
 			    				</h2>
 	    			    	</div>
