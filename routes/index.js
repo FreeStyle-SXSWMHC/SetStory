@@ -7,6 +7,8 @@ var setlistFM = require('../apiHandlers/setlistfm');
 var unified = require('../apiHandlers/unified');
 var musicgraph = require('../apiHandlers/musicgraph');
 var setmine = require('../apiHandlers/setmine')
+var echonest = require('../apiHandlers/echonest')
+
 
 var jf = require('jsonfile')
 
@@ -100,13 +102,13 @@ router.get('/api/story/:artistName', function(req, res, next){
     })
 })
 
-router.get('/api/popularity/:artist/:event', function(req, res, next){
+router.get('/api/popularity/set/:artist/:event', function(req, res, next){
     setmine.popularity(req.params.artist, req.params.event, function(data) {
         res.json(data);
     })
 })
 
-router.get('/api/popularity/:trackTitle', function(req, res, next){
+router.get('/api/popularity/track/:trackTitle', function(req, res, next){
     echonest.getTrackPopularity(req.params.trackTitle, function(data) {
         res.json(data);
     })
