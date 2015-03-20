@@ -37,7 +37,7 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
             
         };
         $scope.gotoArtist = function(c){	
-        	$location.path("/festival/" + c);
+        	$location.path("/artists/" + c);
         };
 
         $scope.updateEvents = function(typed){

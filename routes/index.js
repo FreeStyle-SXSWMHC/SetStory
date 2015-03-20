@@ -22,12 +22,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/api/search/:name', function(req, res, next) {
 
-    if(req.params.name == "Ultra Music Festival 2015") {
-        jf.readFile('../data/umf2015.json', function(err, obj) {
-            res.json(obj.event)
-        })
-    }
-
     var result = [];
 
     if(req.params.name.length > 2) {
@@ -97,7 +91,7 @@ router.get('/api/getSocialMedia', function(req, res, next){
 })
 
 router.get('/api/story/:artistName', function(req, res, next){
-    unified.story(req.params.artistName, function(data){
+    unified.story(req.params.artistName, function(data) {
         res.json(data);
     })
 })

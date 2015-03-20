@@ -17,11 +17,11 @@ angular.module('myApp')
   // Set the dimensions of the canvas / graph
               var margin  = {top: 30, right: 20, bottom: 30, left: 100},
                   width   = 400 - margin.left - margin.right,
-                  height  = 170 - margin.top - margin.bottom;
+                  height  = 270 - margin.top - margin.bottom;
 
               
               // Set the ranges
-              var x = d3.time.scale().range([0, width]);
+              var x = d3.scale.linear().range([0, width]);
               var y = d3.scale.linear().range([height, 0]);
 
               // Define the axes
