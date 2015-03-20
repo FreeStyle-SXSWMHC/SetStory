@@ -5,11 +5,19 @@ config(['$routeProvider', function($routeProvider) {
       templateUrl: '/scripts/ng/partials/search.html', 
       controller: 'SearchController'
     });
+  
   $routeProvider.when('/artists/:name', 
     {
       templateUrl: '/scripts/ng/partials/artists.html', 
       controller: 'ArtistsController'
     });
+  $routeProvider.when('/festival/:name', 
+    {
+      templateUrl: '/scripts/ng/partials/festival.html', 
+      controller: 'FestivalController'
+    });
+  
+  $routeProvider.otherwise({redirectTo: '/'});
 }]);
 
 myApp.controller('SearchController', function($scope,$rootScope,$location, $http){
@@ -29,7 +37,7 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
             
         };
         $scope.gotoArtist = function(c){	
-        	$location.path("/artists/" + c);
+        	$location.path("/festival/" + c);
         };
     
 });
@@ -116,10 +124,12 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 	});
 
 });
+myApp.controller('FestivalController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
 
-$( "#test" ).hover(function() {
-    $("#test").addClass( "flipInY" );
+	
+
 });
+
 
 
 
