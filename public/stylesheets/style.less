@@ -134,6 +134,19 @@ a {
   padding-right:1vw; 
 }
 
+.concert-row {
+  padding: 5px;
+}
+
+.concert-image-container {
+  .flex(1,1,0)
+}
+
+.d3circles-container {
+  .flex(1,1,0);
+  text-align:center;
+}
+
 .page {
     height:100vh;
     width:100vw;
@@ -145,6 +158,9 @@ a {
     .flexContainer(column, vertical); 
 }
 
+.setlist-container {
+  .flex(1,1,0)
+}
 .search-container {
 	background-color: rgba(0,0,0,.5);
 	border-radius: 10px; 
@@ -165,7 +181,12 @@ a {
   position:absolute;   
 }
 
-
+.flex-row {
+  .flexContainer();
+}
+.flex-column {
+  .flexContainer(column, vertical);
+}
 
 .artist-socialmedia-container {
   text-align: center;
@@ -187,10 +208,9 @@ a {
 }
 
 .circle-text {
-width: 50%;
+  width: 50%;
   max-width: 100px;
   float: left;
-
 }
 .circle-text:after {
     content: "";
@@ -216,27 +236,25 @@ width: 50%;
 
 #cd-timeline {
     position: relative;
-    padding: 0em 0;
     margin-top: 2.1em;
     margin-bottom: 2em;
-    padding-left: 9em;
+    padding: 0 3em;
     background-color:#ECECEC;
-    .flex();
 }
+
 #cd-timeline::before {
   content: '';
-  
   position: absolute;
-  top: -5vh;
-  left: 12em;
+  top: -2.1em;
+  left: 6em;
   height: 100%;
   width: 4px;
   background: #d7e4ed;
 }
 
 .row-track{
-      /*margin-left: 8em;*/ /*needs to go*/
-      line-height: 1em;
+      padding: 0.5em 3px;
+      border-bottom: 1px solid black;
 }
 
 .tracklist-container {
@@ -285,10 +303,8 @@ h3 {
 }
 
 .genres-viz {
-  .flexContainer(); 
   padding-left: 8vw;
 }
-
 
 .genres-viz svg:first {
     display:none;
@@ -339,6 +355,7 @@ h3 {
   text-align:center;
   width:100%;
 }
+
 
 .genres-vix {
   .flex();
