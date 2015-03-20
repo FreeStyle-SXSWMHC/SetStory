@@ -121,6 +121,8 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 		return $sce.trustAsResourceUrl(url);
 	}
 	$scope.showImage = function(media){
+
+		console.log(media.type)
 		
 		if (media.type === 'image')
 		{
@@ -154,7 +156,6 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 });
 myApp.controller('EventsController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
 	
-
 	var loadData = function(url){
 		$http.get(url).success(function(data) {
 			
@@ -170,14 +171,20 @@ myApp.controller('EventsController', function($scope,$sce,$filter, $rootScope,$r
 						
 			};
 			$scope.detail = data;
+			$scope.calculateEventScore();
 			console.log(data);
 		});
 	}
-	if($routeParams.name.toLowerCase().indexOf('coachella') > -1){
+	if($routeParams.name.toLowerCase().indexOf('coachella') > -1) {
 		loadData('coachella2015.json');
-	}else{
+	} else {
 		loadData('umf2015.json');
 	}
+
+	$scope.calculateEventScore = function() {
+		$scope.eventScore = $scope.detail.lineup.length * 1300
+	}
+
 	$scope.gotoArtist = function(artist){
 		var encoded = encodeURIComponent(artist.artist);
 		$scope.gotoArtist = function(c){	

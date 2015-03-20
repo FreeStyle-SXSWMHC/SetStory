@@ -12,20 +12,20 @@
 					</div>
 				</div>
 
-				<div class="buffer"></div>
-
 				<div class="data-container">					
-					<div class="data-container">
-						<div class="data-title">Attendance History</div>
-						<d3progress> </d3progress>
-						<div class="data-title">Estimated 2015: 94K</div>
-					</div>					
-				
+					<div class="data-title">Attendance History</div>
+					<d3progress> </d3progress>
+					<div class="data-title">Estimated 2015: 94K</div>
 			    </div>
 
-			    <div class="buffer"></div>
-
 			    <div class="data-container">
+			    	<div class="data-title">Raw Score</div>
+			    	<div class="raw-score-container flex-column">
+			    		<div class="buffer"></div>
+			    		<div class="raw-score">{{eventScore}}</div>
+			    		<div class="buffer"></div>
+			    		<div class="data-title lineup-total">{{detail.lineup.length}} Artists</div>
+			    	</div>
 			    </div>
 
 		</div>

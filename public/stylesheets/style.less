@@ -115,6 +115,9 @@ a {
   color:black; 
 }
 
+.real-buffer {
+  .flex(0)!important;
+}
 .buffer {
     .flex()!important;
 }
@@ -159,6 +162,9 @@ a {
     height:50vh;
     width:100vw;
     .flexContainer(column, vertical); 
+}
+.hidden {
+  display:none!important;
 }
 
 .setlist-container {
@@ -263,6 +269,16 @@ a {
   .flex(1,1,0);
 }
 
+.raw-score-container {
+  text-align: center;
+  .flex();
+}
+.raw-score {
+  font-size:50px;
+  .flex(0);
+  color:#BF55EC;
+}
+
 .row-track{
       padding: 0.5em 3px;
       border-bottom: 1px solid black;
@@ -357,7 +373,9 @@ h3 {
 }
 .data-container{
     display:inline-flex;
-    .flexContainer(column, vertical); 
+    .flexContainer(column, vertical);
+    .flex(1,1, 0);
+    padding: 0 4px;
 }
 .data-title {
   text-align: center;
@@ -368,7 +386,7 @@ h3 {
 .summary-data-body {
   .flex(); 
   .flexContainer(); 
-  padding: 1vh 3vw;
+  padding: 1vh 3px;
   background:white;
 }
 

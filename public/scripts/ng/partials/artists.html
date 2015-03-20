@@ -59,7 +59,7 @@
     				<div class="media-container flex-column">
 	    				<h3 ng-show="concert.media.length > 0"> Media</h3>
 	    				<div ng-repeat='media in concert.media' class="wow fadeIn concert-image-container">
-		    				<div ng-repeat='m in media' >
+		    				<div ng-show='media.type == image' ng-repeat='m in media' >
 		    					<div ng-show="showImage(m)" >
 			    					<img ng-src="{{m.url}}" style = "width:16vw;height:25vh">
 			    				</div>
