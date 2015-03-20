@@ -349,7 +349,13 @@ h3 {
 }
 .data-container{
     display:inline-flex;
-    }
+    .flexContainer(column, vertical); 
+}
+.data-title {
+  text-align: center;
+  font-size: 2em;
+  padding-bottom: 1vh;
+}
 .summary-data-body {
   .flex(); 
   .flexContainer(); 
@@ -362,13 +368,12 @@ h3 {
 }
 .summary-title {
   .flex(0);
-  text-align:left; 
-  color:black; 
-  font-size:3em; 
-//   text-decoration:underline;
-  padding: 0vh 3vw;  
-  text-align:center;
-  width:100%;
+  color:black;  
+  font-size: 4em;
+  padding: 0vh 3vw 2vh 3vw;
+  text-align: center;
+  width: 100%;
+  text-decoration: underline;
 }
 
 
@@ -410,4 +415,5 @@ path.color1 {
   font-weight: 400;
   line-height: 10rem;
   fill: #1072b8;
+  text-align:center; 
 }
