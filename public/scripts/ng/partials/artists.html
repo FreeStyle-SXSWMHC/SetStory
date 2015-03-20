@@ -10,12 +10,13 @@
 	<div ng-show="artistsPhoto" class="artist-socialmedia-container">
 		<img ng-src="{{artistsPhoto}}" class="wow fadeIn"></div>
 	<div class="artist-info-container">
-		<div class="buffer"></div>	
+		
 		<div class="artist-general-info">
+	        <h1>Score : {{artistScore}}</h1>
 	        <p>Country: {{artistData.country_of_origin}}</p>
 	        <p>Genre: {{artistData.main_genre}}</p>
 	        <p>Decade: {{artistData.decade}}</p>
-	        <p>Score: {{artistScore}}</p>
+	        
   		</div>
 	</div>
  
