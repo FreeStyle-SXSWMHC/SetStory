@@ -132,7 +132,42 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 		});
 	});
 
+	$scope.choice = decodeURIComponent($scope.choice);
+
 });
 myApp.controller('EventsController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
-	$scope.image = "https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=300x250&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284";
+	
+
+
+	var loadData = function(url){
+		$http.get(url).success(function(data) {
+			
+			for (var i = 0; i < data.lineup.length; i++) {
+				if ( data.lineup[i].artistimageURL === 'ca6a250fc84f30e571a62286fc8c2c16c7ce64b4.png')
+				{
+					 data.lineup[i].artistimageURL ='';
+				}
+				else {
+					 data.lineup[i].artistimageURL = 'http://stredm.s3-website-us-east-1.amazonaws.com/namecheap/' +  data.lineup[i].artistimageURL;	
+				}
+
+						
+			};
+			$scope.detail = data;
+			console.log(data);
+		});
+	}
+	if($routeParams.name.toLowerCase().indexOf('coachella') > -1){
+		loadData('coachella2015.json');
+	}else{
+		loadData('umf2015.json');
+	}
+	$scope.gotoArtist = function(artist){
+		var encoded = encodeURIComponent(artist.artist);
+		$scope.gotoArtist = function(c){	
+        	$location.path("/artists/" + encoded);
+        };
+	}
+
+
 });
