@@ -57,10 +57,12 @@
 
     			<div class="genres-viz">
     				<h3 ng-show="concert.media.length > 2"> Media</h3>
+    				<div class="buffer"></div>
     				<div ng-repeat='media in concert.media' class="wow fadeIn concert-row">
+    				<div class="buffer"></div>
     				<div ng-repeat='m in media' >
     					<div ng-show="showImage(m)" >
-	    					<img ng-src="{{m.url}}" style = "width:25vw;height:25vh">
+	    					<img ng-src="{{m.url}}" style = "width:16vw;height:25vh">
 	    				</div>
 	    				<!-- <div ng-show="showVideo(m)">
 	    					<video controls ng-src="{{showVideoUrl(m.url)}}">
@@ -68,22 +70,26 @@
 	    				<div ng-show="showEmbed(m)">
 	    					<iframe ng-src="{{showVideoUrl(m.url)}}">
 	    				</div> -->
-	    			</div>	
-    			   </div>
-    			
-    			   <h3 ng-show="concert.tracks.length > 0"> SetList</h3>
+	    			</div>
+	    			<div class="buffer"></div>	
+    			  </div>
+    				<div class="buffer"></div>
+    			  <h3 ng-show="concert.tracks.length > 0"> SetList</h3>
+    			  <div class="buffer"></div>
     				<div class="tracklist-container">
     					
     					<div ng-repeat='track in concert.tracks' class="row-track wow fadeIn">
 
-	    				<h2>{{track.name}} 
+		    				<h2>{{track.name}} 
 	    					<span ng-show="track.originalArtist">by <small>{{track.originalArtist}}</small></span>
-	    				</h2>
-    			    	</div>
+		    				</h2>
     			    </div>
-
-    			    <h3 ng-show="concert.meta.genres.length > 0" class="genrelabel"> Genres</h3>
-    			   <d3circles dataset="concert.meta.genres"> </d3circles>
+    			  </div>
+    			  <div class="buffer"></div>
+    			  <h3 ng-show="concert.meta.genres.length > 0" class="genrelabel"> Genres</h3>
+    			  <div class="buffer"></div>
+    			  <d3circles dataset="concert.meta.genres"> </d3circles>
+    			  <div class="buffer"></div>
 
     			</div>
 
