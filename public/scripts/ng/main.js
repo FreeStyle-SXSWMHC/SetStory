@@ -11,13 +11,12 @@ config(['$routeProvider', function($routeProvider) {
       templateUrl: '/scripts/ng/partials/artists.html', 
       controller: 'ArtistsController'
     });
-  $routeProvider.when('/festival/:name', 
-    {
-      templateUrl: '/scripts/ng/partials/festival.html', 
-      controller: 'FestivalController'
-    });
   
-  $routeProvider.otherwise({redirectTo: '/'});
+   $routeProvider.when('/events/:name', 
+    {
+      templateUrl: '/scripts/ng/partials/events.html', 
+      controller: 'EventsController'
+    });
 }]);
 
 myApp.controller('SearchController', function($scope,$rootScope,$location, $http){
@@ -25,6 +24,7 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
     $rootScope.main = true;
     $rootScope.detail = false;
         $scope.artists = [];
+        $scope.events = [];
 
         // gives another movie array on changez
         $scope.updateArtists = function(typed){
@@ -39,16 +39,25 @@ myApp.controller('SearchController', function($scope,$rootScope,$location, $http
         $scope.gotoArtist = function(c){	
         	$location.path("/festival/" + c);
         };
+
+        $scope.updateEvents = function(typed){
+            // MovieRetriever could be some service returning a promise
+            var url = '/api/search/' + typed;
+            
+            $http.get(url).success(function(data) {
+		    	$scope.events = data;
+		    });
+            
+        };
+        $scope.gotoEvent = function(c){	
+        	$location.path("/events/" + c);
+        };
     
 });
 
 
 myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
 	
-
-
-
-
 	$scope.choice = $routeParams.name;
 	
 	$scope.getArtistPhoto = function(){
@@ -91,7 +100,7 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 		if (!media) return false;
 		return media.type ==='embed';
 	}
-	$scope.showVideoUrl = function(url){
+	$scope.showVideoUrl = function(url) {
 		return $sce.trustAsResourceUrl(url);
 	}
 	$scope.showImage = function(media){
@@ -124,12 +133,6 @@ myApp.controller('ArtistsController', function($scope,$sce,$filter, $rootScope,$
 	});
 
 });
-myApp.controller('FestivalController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
-
-	
+myApp.controller('EventsController', function($scope,$sce,$filter, $rootScope,$routeParams,$location, $http) {
 
 });
-
-
-
-

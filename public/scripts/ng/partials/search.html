@@ -12,5 +12,18 @@
 			on-select="gotoArtist"></autocomplete>
 		
 	</div>
+	<div class="buffer"></div>
+	<div class="search-container events">
+		<h1 class="wow fadeIn" style="margin-left:1vw">Valuate your Event's Artist Lineup</h1>	
+		<br>
+		<autocomplete class="search-bar" 
+			ng-model="search" 
+			attr-placeholder="search events..." 
+			click-activation="true" 
+			data="events" 
+			on-type="updateEvents" 
+			on-select="gotoEvent"></autocomplete>
+		
+	</div>
 	<div class="buffer-big"></div>	
 </div>
