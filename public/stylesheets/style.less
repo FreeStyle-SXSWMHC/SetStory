@@ -62,7 +62,7 @@ artist-general-info {
 
 .artist-lineup-text {
   .flex(); 
-  font-size:2.5em; 
+  font-size:2em; 
 }
 
 .artist-text-row {
@@ -282,16 +282,28 @@ h3 {
 
 .lineup-title {
   .flex(0); 
-  font-size:3em; 
-  font-decoration:underline; 
+  font-size:2.5em;  
   color:black; 
   padding: 1vh 3vw 2vh 3vw;
-  text-align: left;
-  text-decoration: underline; 
+  text-align: left; 
   background-color: rgba(228, 241, 254,.8);
 }
 .summary-container {
   .flex(); 
   background-color:white; 
+  .flexContainer(column, vertical); 
+}
+.summary-data-body {
+  .flex(); 
+  .flexContainer(); 
+  padding: 1vh 3vw;
+}
+.summary-title {
+  .flex(0);
+  text-align:left; 
+  color:black; 
+  font-size:3em; 
+  text-decoration:underline;
+  padding: 0vh 3vw;  
 }
     
