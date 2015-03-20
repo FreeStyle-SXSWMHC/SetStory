@@ -13,6 +13,7 @@ var echonest = require('../apiHandlers/echonest')
 var jf = require('jsonfile')
 
 setmine.init(function() {
+    console.log("setmine models stored.")
 })
 
 /* GET home page. */
