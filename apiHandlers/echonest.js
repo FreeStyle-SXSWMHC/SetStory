@@ -1,8 +1,5 @@
 var rest = require('restler');
 var echonest = {};
-var api_key= 'QQELH8UNTWLVBRQIB';
-var consumer_key= '019584e62e8fca4752f9ee885d84c050';
-var shared_secret= 'RwkQVo9ASH2dSIMlR7D4fg';
 echonest.getTrackPopularity = function(trackTitle, cb){
     // Use decibel to get all genres for a given artist
     rest.get('http://developer.echonest.com/api/v4/song/search', {

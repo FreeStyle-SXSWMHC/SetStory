@@ -1,5 +1,4 @@
 var musicgraph = {};
-musicgraph.api_key = "a31ca1efc8a5661d9cdcc0935fa41724";
 var rest = require('restler');
 
 musicgraph.getSongInfo = function(artist,title,cb){

@@ -1,6 +1,5 @@
 var rest = require('restler');
 var openaura = {};
-var api_key = 'sxsw2015';
 
 openaura.getArtistImage = function(artist, cb){
     // Use decibel to get all genres for a given artist

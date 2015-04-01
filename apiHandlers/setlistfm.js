@@ -1,6 +1,5 @@
 var rest = require('restler');
 var appId = 'setlistfm';
-var appKey = '463c64bb-c052-49bd-9838-8c251c427668';
 var moment = require('moment');
 var setlistFM = {
     // Make a clean output of the mess that is the setlistfm api
