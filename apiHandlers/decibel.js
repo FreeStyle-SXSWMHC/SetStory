@@ -1,5 +1,7 @@
 var rest = require('restler');
 var decibel = {};
+decibel.appId = '9425f121';
+decibel.appKey = 'bfb407871363c8a369d7fa3315608af1';
 
 // DECIBEL IS BROKEN RIGHT NOW
 decibel.getArtistGenres = function(artist, cb){
@@ -46,4 +48,6 @@ decibel.getSongInfo = function(title,artist,cb) {
     //    cb(data);
     //})
 
-module.exports =  decibel;
+
+
+module.exports = decibel;

@@ -1,5 +1,6 @@
 var rest = require('restler');
 var setmine = {};
+var api_key = 'sxsw2015';
 var jf = require('jsonfile')
 
 var artists = []
