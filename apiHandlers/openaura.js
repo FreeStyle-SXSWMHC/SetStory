@@ -1,6 +1,6 @@
 var rest = require('restler');
 var openaura = {};
-var api_key = 'sxsw2015';
+var api_key = 'e92932b80a618686be74f8c720e39384ac04df55';
 
 openaura.getArtistImage = function(artist, cb){
     // Use decibel to get all genres for a given artist
@@ -24,6 +24,7 @@ openaura.getArtistImage = function(artist, cb){
 openaura.getSocialFeed = function(artist, limit, offset, cb){
     rest.get('http://api.openaura.com/v1/search/artists', {
         query : {'q' : artist, 'limit' : 1, 'api_key': api_key}}).on('complete', function(data){
+            console.log(data)
         if(!data[0]){
             console.log('no artist found');
             cb(null);
